@@ -1,15 +1,13 @@
 import React from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View, Image, Text,Button } from 'react-native';
 
 
 
-const Title = props => {
+const Qrscanpage = props => {
     return (
       
-            <View style={styles.container}>
-                <Text style={styles.contents}>
-                <Image style={styles.imagestar} source={require("../assets/images/star.jpg")} /> getfresh</Text>
-                
+            <View>
+        <Button title='Title' onPress={() => props.navigation.navigate('Explorepage')}  />
                  </View>
     )
 }
@@ -38,4 +36,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Title;
+export default Qrscanpage;

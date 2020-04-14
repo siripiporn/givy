@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View, Image, Text,TouchableOpacity } from 'react-native';
+import BasketIcon from '../assets/images/icons/basket.svg';
+import CoinIcon from '../assets/images/icons/coin.svg';
+import Rectangle from '../assets/images/icons/rectangle.svg';
+
 
 
 export default class Point extends Component {
@@ -7,41 +11,40 @@ export default class Point extends Component {
         return (
         
 
-<View style={styles.container}>
-                <Text>Point</Text>
-            </View>
+            <View style={styles.container}>
+            <TouchableOpacity>
+                <Text style={styles.rectangle}> <Rectangle /> </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Text style={styles.coinIcon}> <CoinIcon /></Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Text style={styles.basketIcon}>  <BasketIcon /></Text>
+            </TouchableOpacity>
+        </View>
                  
              
         )
     }
 }
-
+ 
 const styles = StyleSheet.create({
     container: {
-       
         marginTop: 16,
         flex: 1,
         flexDirection: 'row',
-        marginVertical: 30,
-        marginHorizontal: 5,
+        marginVertical: 20,
+        marginHorizontal: 10,
 
     },
-    imagestar: {
-        width: 20,
-        height: 20,
-    },
-    contents: {
-        color: 'white',
+    rectangle: {
         marginHorizontal: 5,
     },
-    logo: {
-        marginLeft: 10,
-        width: 100,
-        height: 100,
-        borderRadius: 50
+    coinIcon: {
+        marginHorizontal: 20,
     },
-
- 
+    basketIcon: {
+        marginHorizontal: 10,
+    }
 
 });
-

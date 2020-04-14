@@ -1,48 +1,45 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
- 
- 
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import Feedicons from '../assets/images/icons/feed.svg';
+import GalleryIcon from '../assets/images/icons/galleryIcon.svg'
+import ShopIcon from '../assets/images/icons/shop.svg'
 
 export default class Menu extends Component {
     render() {
         return (
-        
-
-<View style={styles.container}>
- 
+            <View style={styles.container}>
+                <TouchableOpacity>
+                    <Text style={styles.feedicon}> <Feedicons /></Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.galleryIcon}> <GalleryIcon /></Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.shopIcon}> <ShopIcon /></Text>
+                </TouchableOpacity>
             </View>
-                 
-             
         )
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-       
         marginTop: 16,
         flex: 1,
         flexDirection: 'row',
-        marginVertical: 30,
-        marginHorizontal: 5,
+        marginVertical: 20,
+        marginHorizontal: 45,
 
     },
-    imagestar: {
-        width: 20,
-        height: 20,
+    feedicon: {
+        marginHorizontal: 40,
     },
-    contents: {
-        color: 'white',
-        marginHorizontal: 5,
+    galleryIcon: {
+        marginHorizontal: 40,
     },
-    logo: {
-        marginLeft: 10,
-        width: 100,
-        height: 100,
-        borderRadius: 50
-    },
-
- 
+    shopIcon: {
+        marginHorizontal: 40,
+    }
 
 });
 
