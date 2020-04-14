@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import {  View,  Text, TouchableOpacity } from 'react-native';
+import { globalStyles } from '../styles/styleGlobal';
 import Feedicons from '../assets/images/icons/feed.svg';
 import GalleryIcon from '../assets/images/icons/galleryIcon.svg'
 import ShopIcon from '../assets/images/icons/shop.svg'
@@ -7,39 +8,18 @@ import ShopIcon from '../assets/images/icons/shop.svg'
 export default class Menu extends Component {
     render() {
         return (
-            <View style={styles.container}>
+            <View style={globalStyles.container_menu}>
                 <TouchableOpacity>
-                    <Text style={styles.feedicon}> <Feedicons /></Text>
+                    <Text style={globalStyles.feedicon_menu}> <Feedicons /></Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Text style={styles.galleryIcon}> <GalleryIcon /></Text>
+                    <Text style={globalStyles.galleryIcon_menu}> <GalleryIcon /></Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Text style={styles.shopIcon}> <ShopIcon /></Text>
+                    <Text style={globalStyles.shopIcon_menu}> <ShopIcon /></Text>
                 </TouchableOpacity>
             </View>
         )
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        marginTop: 16,
-        flex: 1,
-        flexDirection: 'row',
-        marginVertical: 20,
-        marginHorizontal: 45,
-
-    },
-    feedicon: {
-        marginHorizontal: 40,
-    },
-    galleryIcon: {
-        marginHorizontal: 40,
-    },
-    shopIcon: {
-        marginHorizontal: 40,
-    }
-
-});
 

@@ -1,15 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import Navigation from './screens/navigation';
 
 const App = () => {
   return (
     <NavigationContainer>
-   
-  <Navigation />
- 
+      <Navigation />
     </NavigationContainer>
   );
 }

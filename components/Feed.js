@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, Text, FlatList } from "react-native";
+import {  View, Image, FlatList } from "react-native";
+import { globalStyles } from '../styles/styleGlobal';
 
 export default class Feed extends Component {
   constructor(props) {
@@ -26,9 +27,9 @@ export default class Feed extends Component {
         data={this.state.photo_feed}
         keyExtractor={(index) => index.toString()}
         renderItem={({ index }) => (
-          <View key={index} style={styles.container}>
+          <View key={index} style={globalStyles.container_feed}>
             <Image
-              style={styles.image}
+              style={globalStyles.image_feed}
               source={{
                 uri:
                   "https://source.unsplash.com/random/800x600" +
@@ -36,7 +37,7 @@ export default class Feed extends Component {
               }}
             />
             <Image
-              style={styles.image}
+              style={globalStyles.image_feed}
               source={{
                 uri:
                   "https://source.unsplash.com/random/800x600" +
@@ -44,7 +45,7 @@ export default class Feed extends Component {
               }}
             />
             <Image
-              style={styles.image}
+              style={globalStyles.image_feed}
               source={{
                 uri:
                   "https://source.unsplash.com/random/800x600" +
@@ -57,20 +58,4 @@ export default class Feed extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "row",
-    marginTop: 16,
-    marginHorizontal: 5,
-  },
-
-  image: {
-    height: 120,
-    width: 300,
-    flex: 1,
-    flexDirection: "row",
-    marginHorizontal: 5,
-  },
-});
+ 
