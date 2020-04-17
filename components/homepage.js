@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, View, SafeAreaView, ScrollView,Text,Button } from 'react-native';
 import AboutBrand from './aboutBrand';
-import Feed from './Feed';
 import Nav from './nav';
 import Story from './story';
 import Menu from './menu';
 import Point from './points';
 import Title from './title'
+
 
 
 const Homepage = () => {
@@ -21,10 +21,8 @@ const Homepage = () => {
                         <View style={styles.navmenu}><Nav /></View>
                         <View style={styles.story}><Story /></View>
                         <View style={styles.menu}><Menu /></View>
-                        <View style={styles.feed}><Feed /></View>
-
+                         
                     </View>
-                    
                 </ScrollView>
             </SafeAreaView>
 
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
     menu: {
         flex: 1,
         flexDirection: 'column',
-          backgroundColor:'#1F2431', 
+        backgroundColor:'#1F2431', 
        
     },
 });

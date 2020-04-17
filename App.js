@@ -1,23 +1,34 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
-
+import React, {useState} from 'react';
+import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigation from './screens/navigation';
+import { AppLoading } from 'expo';
 
-const App = () => {
-  return (
-    <NavigationContainer>
+const getFonts = () => Font.loadAsync({
+  'gelion-bold': require('./assets/fonts/Gelion-Bold.ttf'),
+  'gelion-medium': require('./assets/fonts/Gelion-Medium.ttf'),
+  'gelion-regular': require('./assets/fonts/Gelion-Regular.ttf')
+});
+
+export default function App() {
+  const [fontLoaded, setfontLoaded] = useState(false);
+
+  if (fontLoaded) {
+    return (
+      <NavigationContainer>
       <Navigation />
     </NavigationContainer>
-  );
-}
+     
+    )
+  } else {
+    return (
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setfontLoaded(true)}
+      />
+    )
+  }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-export default App;
+}
+ 
+ 
