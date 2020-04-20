@@ -31,7 +31,7 @@ export default class Menu extends Component {
           selectedIndex={customStyleIndex}
           onTabPress={this.handleCustomIndexSelect}
           borderRadius={0}
-          tabsContainerStyle={{ height: 45, backgroundColor: '#1F2431', }}
+          tabsContainerStyle={{ height: 70, backgroundColor: '#1F2431', }}
           tabStyle={{
             backgroundColor: '#1F2431',
             borderWidth: 0,

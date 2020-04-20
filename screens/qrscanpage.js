@@ -7,7 +7,7 @@ const Qrscanpage = props => {
     return (
       
             <View>
-        <Button title='Title' onPress={() => props.navigation.navigate('Explorepage')}  />
+        <Button title='Title' onPress={() => props.navigation.navigate('About')}  />
                  </View>
     )
 }

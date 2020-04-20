@@ -6,6 +6,8 @@ import Qrscanpage from './qrscanpage';
 import Explorepage from './explorepage';
 import MessagesPage from './messagesPage';
 import ProfilePage from './profilePage';
+import About from './about';
+ 
 import { Image } from 'react-native';
 
 
@@ -125,6 +127,8 @@ const SuccessTab = () => {
         component={ProfilePage}
         options={Profile}
       />
+          
+    
 
     </Tab.Navigator>
   )
@@ -172,10 +176,22 @@ const RootStack = () => {
         component={SuccessTab}
         options={{ title: 'Profile' }}
       />
+      <Stack.Screen
+        name='AboutBrand'
+        component={SuccessTab}
+        options={{ title: 'AboutBrand' }}
+      />
+         <Stack.Screen
+        name='About'
+        component={About}
+        options={{ title: 'About' }}
+      />
     </Stack.Navigator>
+
+    
 
   )
 }
 
-
+ 
 export default RootStack;

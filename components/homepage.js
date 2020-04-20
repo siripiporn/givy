@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, SafeAreaView, ScrollView,Text,Button } from 'react-native';
 import AboutBrand from './aboutBrand';
+ 
 import Nav from './nav';
 import Story from './story';
 import Menu from './menu';
@@ -9,16 +10,16 @@ import Title from './title'
 
 
 
-const Homepage = () => {
+const Homepage = ( ) => {
     
         return (
-            <SafeAreaView >
-                <ScrollView >
+            <SafeAreaView style={{backgroundColor: '#252A37' }} >
+                <ScrollView style={{backgroundColor: '#252A37'}}  >
                     <View style={styles.container}>
                         <View style={styles.title}><Title /></View>
-                        <View style={styles.point}><Point /></View> 
-                        <View style={styles.aboutbrand}><AboutBrand /></View>
-                        <View style={styles.navmenu}><Nav /></View>
+                        <View style={styles.point} style={{marginHorizontal: 16,}}><Point /></View> 
+                        <View style={styles.aboutbrand} style={{marginHorizontal: 16,}}><AboutBrand /></View>
+                        <View style={styles.navmenu} style={{marginHorizontal: 16,}}><Nav /></View>
                         <View style={styles.story}><Story /></View>
                         <View style={styles.menu}><Menu /></View>
                          
@@ -34,6 +35,7 @@ const Homepage = () => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor:'#252A37',
+  
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',

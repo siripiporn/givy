@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Image, Text, TouchableOpacity, Linking,Button } from 'react-native';
 import { globalStyles } from '../styles/styleGlobal';
 
- 
-
-export default class AboutBrand extends Component {
-    render() {
-        return (
-
-            <View >
+const About = props => {
+    return (
+        <View >
                  
                 <View style={globalStyles.container_brand}>
                     <Image style={globalStyles.logo_brand} source={require("../assets/images/logo.jpg")} />
@@ -28,6 +24,7 @@ export default class AboutBrand extends Component {
                     <Text style={globalStyles.contents_text}>www.getfresh.com <Text onPress={() => Linking.openURL('www.google.com')}>See more..</Text> </Text>
                 </View>
             </View>
-        )
-    }
+    )
 }
+ 
+export default About;

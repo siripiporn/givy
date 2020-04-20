@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, FlatList, Keyboard, TouchableOpacity, Image, SafeAreaView, ScrollView } from "react-native";
 import * as Animatable from 'react-native-animatable';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 import Fliter from '../assets/images/icons/fliter.svg'
 import { globalStyles } from '../styles/styleGlobal';
@@ -46,19 +47,15 @@ export default class Store extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{ height: 80, backgroundColor: '#252A37', justifyContent: 'center', paddingHorizontal: 5 }}>
-                    <Animatable.View style={{
-                        height: 50, backgroundColor: '#252A37', borderColor: '#50596D',
-                        borderRadius: 5,
-                        borderWidth: 1.5, flexDirection: 'row', padding: 5, alignItems: 'center'
-                    }}>
+                <View style={globalStyles.searchBox_store}>
+                    <Animatable.View style={globalStyles.searchIcon_store}>
                         <Animatable.View animation={this.state.searchBarFocused ? "fadeInLeft" : "fadeInRight"} duration={400}>
                             <Icon name={this.state.searchBarFocused ? "md-arrow-back" : "ios-search"} style={{ fontSize: 24, color: 'white' }} />
                         </Animatable.View>
-                        <TextInput placeholder="Search menu, category" style={{ fontSize: 18, marginLeft: 15, flex: 1, color: 'white' }} />
+                        <TextInput placeholder="Search menu, category" style={globalStyles.contentSearch_store} />
                         {/* <Button title="Press me" color="#252A37" style={{height: 50, backgroundColor: '#252A37', borderColor: '#50596D',}} /> */}
-                        <TouchableOpacity style={styles.search}>
-                            <Text style={styles.search_icon}>
+                        <TouchableOpacity style={globalStyles.search_store}>
+                            <Text style={globalStyles.search_icon_store}>
                                 <Fliter />  </Text>
                         </TouchableOpacity>
                     </Animatable.View>
@@ -71,9 +68,9 @@ export default class Store extends Component {
                     keyExtractor={(index) => index.toString()}
                 />
                 {/* container New Popular */}
-                <View style={styles.container.content}>
-                    <Text style={styles.container_content}>What's popular here</Text>
-                    <Text style={styles.barslide}></Text>
+                <View style={globalStyles.container_content_store}>
+                    <Text style={globalStyles.container_content_store}>What's popular here</Text>
+                    <Text style={globalStyles.barslide_store}></Text>
                 </View>
 
                 <SafeAreaView >
@@ -84,118 +81,173 @@ export default class Store extends Component {
                             <View style={globalStyles.imageContainer_store}>
                                 <Image style={globalStyles.image_store} source={{ uri: 'https://source.unsplash.com/random/800x600' + Math.floor((Math.random() * 800) + 500) }} />
 
-                                <Text style={styles.boxpopular}>{name_product}</Text>
-                                <Text style={styles.boxpopular_Price}>${price}</Text>
-                                <Text style={styles.boxpopular_sale}>${price_sale}</Text>
+                                <Text style={globalStyles.boxpopular_store}>{name_product}</Text>
+                                <Text style={globalStyles.boxpopular_Price_store}>${price}</Text>
+                                <Text style={globalStyles.boxpopular_sale_store}>${price_sale}</Text>
 
                             </View>
                             <View style={globalStyles.imageContainer_store}>
                                 <Image style={globalStyles.image_store} source={{ uri: 'https://source.unsplash.com/random/800x600' + Math.floor((Math.random() * 800) + 500) }} />
 
-                                <Text style={styles.boxpopular}>{name_product}</Text>
-                                <Text style={styles.boxpopular_Price}>${price}</Text>
-                                <Text style={styles.boxpopular_sale}>${price_sale}</Text>
+                                <Text style={globalStyles.boxpopular_store}>{name_product}</Text>
+                                <Text style={globalStyles.boxpopular_Price_store}>${price}</Text>
+                                <Text style={globalStyles.boxpopular_sale_store}>${price_sale}</Text>
 
                             </View>
                             <View style={globalStyles.imageContainer_store}>
                                 <Image style={globalStyles.image_store} source={{ uri: 'https://source.unsplash.com/random/800x600' + Math.floor((Math.random() * 800) + 500) }} />
 
-                                <Text style={styles.boxpopular}>{name_product}</Text>
-                                <Text style={styles.boxpopular_Price}>${price}</Text>
-                                <Text style={styles.boxpopular_sale}>${price_sale}</Text>
+                                <Text style={globalStyles.boxpopular_store}>{name_product}</Text>
+                                <Text style={globalStyles.boxpopular_Price_store}>${price}</Text>
+                                <Text style={globalStyles.boxpopular_sale_store}>${price_sale}</Text>
 
                             </View>
                             <View style={globalStyles.imageContainer_store}>
                                 <Image style={globalStyles.image_store} source={{ uri: 'https://source.unsplash.com/random/800x600' + Math.floor((Math.random() * 800) + 500) }} />
 
-                                <Text style={styles.boxpopular}>{name_product}</Text>
-                                <Text style={styles.boxpopular_Price}>${price}</Text>
-                                <Text style={styles.boxpopular_sale}>${price_sale}</Text>
+                                <Text style={globalStyles.boxpopular_store}>{name_product}</Text>
+                                <Text style={globalStyles.boxpopular_Price_store}>${price}</Text>
+                                <Text style={globalStyles.boxpopular_sale_store}>${price_sale}</Text>
 
                             </View>
                             <View style={globalStyles.imageContainer_store}>
                                 <Image style={globalStyles.image_store} source={{ uri: 'https://source.unsplash.com/random/800x600' + Math.floor((Math.random() * 800) + 500) }} />
-
-                                <Text style={styles.boxpopular}>{name_product}</Text>
-                                <Text style={styles.boxpopular_Price}>${price}</Text>
-                                <Text style={styles.boxpopular_sale}>${price_sale}</Text>
-
+                                <Text style={globalStyles.boxpopular_store}>{name_product}</Text>
+                                <Text style={globalStyles.boxpopular_Price_store}>${price}</Text>
+                                <Text style={globalStyles.boxpopular_sale_store}>${price_sale}</Text>
                             </View>
                             <View style={globalStyles.imageContainer_store}>
                                 <Image style={globalStyles.image_store} source={{ uri: 'https://source.unsplash.com/random/800x600' + Math.floor((Math.random() * 800) + 500) }} />
-
-                                <Text style={styles.boxpopular}>{name_product}</Text>
-                                <Text style={styles.boxpopular_Price}>${price}</Text>
-                                <Text style={styles.boxpopular_sale}>${price_sale}</Text>
-
+                                <Text style={globalStyles.boxpopular_store}>{name_product}</Text>
+                                <Text style={globalStyles.boxpopular_Price_store}>${price}</Text>
+                                <Text style={globalStyles.boxpopular_sale_store}>${price_sale}</Text>
                             </View>
-
                         </View>
                     </ScrollView>
                 </SafeAreaView>
 
-
-                <View style={styles.container.content}>
-                    <Text style={styles.container_content}>Recommended</Text>
-                    <Text style={styles.barslide}></Text>
-
+                {/* Recommended */}
+                <View style={globalStyles.container_content_store}>
+                    <Text style={globalStyles.container_content_store}>Recommended</Text>
+                    <Text style={globalStyles.barslide_store}></Text>
                 </View>
-
                 {/* container Box */}
-                <View style={styles.container_box}>
-                    <View style={styles.container_image}>
-                        <TouchableOpacity >
-                            <View style={styles.image}>
-                                <Image source={require('../assets/images/products/Rectangle.png')} />
-                            </View>
-                        </TouchableOpacity>
-                        <View style={styles.content_detail}>
-                            <Text style={styles.texts_header}>Ice Cappucino</Text>
-                            <Text style={styles.texts_des}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
-                            <View style={styles.container_detail}>
-                                <Text style={styles.content_price}>$100</Text>
-                                <Text style={styles.content_sale}>$50</Text>
-                                <Text style={styles.content_heart}><Heart /></Text>
-                            </View>
-
+                <View style={globalStyles.container_box_store} />
+                <View style={globalStyles.container_image_store}>
+                    <TouchableOpacity >
+                        <View style={globalStyles.image_store}>
+                            <Image source={require('../assets/images/products/Rectangle.png')} />
                         </View>
+                    </TouchableOpacity>
+                    <View style={globalStyles.content_detail_store}>
+                        <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
+                        <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+                        <View style={globalStyles.container_detail_store}>
+                            <Text style={globalStyles.content_price_store}>$100</Text>
+                            <Text style={globalStyles.content_sale_store}>$50</Text>
+                            <Text style={globalStyles.content_heart_store}><Heart /></Text>
+                        </View>
+
                     </View>
-                    <View style={styles.container_image}>
-                        <TouchableOpacity >
-                            <View style={styles.image}>
-                                <Image source={require('../assets/images/products/Rectangle.png')} />
-                            </View>
-                        </TouchableOpacity>
-                        <View style={styles.content_detail}>
-                            <Text style={styles.texts_header}>Ice Cappucino</Text>
-                            <Text style={styles.texts_des}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
-                            <View style={styles.container_detail}>
-                                <Text style={styles.content_price}>$100</Text>
-                                <Text style={styles.content_sale}>$50</Text>
-                                <Text style={styles.content_heart}><Heart /></Text>
-                            </View>
-
+                </View>
+                <View style={globalStyles.container_box_store} />
+                <View style={globalStyles.container_image_store}>
+                    <TouchableOpacity >
+                        <View style={globalStyles.image_store}>
+                            <Image source={require('../assets/images/products/Rectangle.png')} />
                         </View>
+                    </TouchableOpacity>
+                    <View style={globalStyles.content_detail_store}>
+                        <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
+                        <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+                        <View style={globalStyles.container_detail_store}>
+                            <Text style={globalStyles.content_price_store}>$100</Text>
+                            <Text style={globalStyles.content_sale_store}>$50</Text>
+                            <Text style={globalStyles.content_heart_store}><Heart /></Text>
+                        </View>
+
                     </View>
-                    <View style={styles.container_image}>
-                        <TouchableOpacity >
-                            <View style={styles.image}>
-                                <Image source={require('../assets/images/products/Rectangle.png')} />
-                            </View>
-                        </TouchableOpacity>
-                        <View style={styles.content_detail}>
-                            <Text style={styles.texts_header}>Ice Cappucino</Text>
-                            <Text style={styles.texts_des}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
-                            <View style={styles.container_detail}>
-                                <Text style={styles.content_price}>$100</Text>
-                                <Text style={styles.content_sale}>$50</Text>
-                                <Text style={styles.content_heart}><Heart /></Text>
-                            </View>
-
+                </View>
+                <View style={globalStyles.container_box_store} />
+                <View style={globalStyles.container_image_store}>
+                    <TouchableOpacity >
+                        <View style={globalStyles.image_store}>
+                            <Image source={require('../assets/images/products/Rectangle.png')} />
                         </View>
+                    </TouchableOpacity>
+                    <View style={globalStyles.content_detail_store}>
+                        <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
+                        <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+                        <View style={globalStyles.container_detail_store}>
+                            <Text style={globalStyles.content_price_store}>$100</Text>
+                            <Text style={globalStyles.content_sale_store}>$50</Text>
+                            <Text style={globalStyles.content_heart_store}><Heart /></Text>
+                        </View>
+
                     </View>
                 </View>
 
+                {/* Drinks */}
+                <View style={globalStyles.container_content_store}>
+                    <Text style={globalStyles.container_content_store}>Drinks</Text>
+                    <Text style={globalStyles.barslide_store}></Text>
+                </View>
+                {/* container Box */}
+                <View style={globalStyles.container_box_store} />
+                <View style={globalStyles.container_image_store}>
+                    <TouchableOpacity >
+                        <View style={globalStyles.image_store}>
+                            <Image source={require('../assets/images/products/Rectangle.png')} />
+                        </View>
+                    </TouchableOpacity>
+                    <View style={globalStyles.content_detail_store}>
+                        <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
+                        <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+                        <View style={globalStyles.container_detail_store}>
+                            <Text style={globalStyles.content_price_store}>$100</Text>
+                            <Text style={globalStyles.content_sale_store}>$50</Text>
+                            <Text style={globalStyles.content_heart_store}><Heart /></Text>
+                        </View>
+
+                    </View>
+                </View>
+                <View style={globalStyles.container_box_store} />
+                <View style={globalStyles.container_image_store}>
+                    <TouchableOpacity >
+                        <View style={globalStyles.image_store}>
+                            <Image source={require('../assets/images/products/Rectangle.png')} />
+                        </View>
+                    </TouchableOpacity>
+                    <View style={globalStyles.content_detail_store}>
+                        <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
+                        <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+                        <View style={globalStyles.container_detail_store}>
+                            <Text style={globalStyles.content_price_store}>$100</Text>
+                            <Text style={globalStyles.content_sale_store}>$50</Text>
+                            <Text style={globalStyles.content_heart_store}><Heart /></Text>
+                        </View>
+
+                    </View>
+                </View>
+                <View style={globalStyles.container_box_store} />
+                <View style={globalStyles.container_image_store}>
+                    <TouchableOpacity >
+                        <View style={globalStyles.image_store}>
+                            <Image source={require('../assets/images/products/Rectangle.png')}  />
+                             
+                        </View>
+                    </TouchableOpacity>
+                    <View style={globalStyles.content_detail_store}>
+                        <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
+                        <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+                        <View style={globalStyles.container_detail_store}>
+                            <Text style={globalStyles.content_price_store}>$100</Text>
+                            <Text style={globalStyles.content_sale_store}>$50</Text>
+                            <Text style={globalStyles.content_heart_store}><Heart /></Text>
+                        </View>
+
+                    </View>
+                </View>
             </View>
         );
     }
@@ -206,122 +258,135 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         paddingTop: 5,
         flex: 1,
-    },
+        //     },
+        // searchBox_store:{
+        //     height: 80,
+        //      backgroundColor: '#252A37', 
+        //      justifyContent: 'center', 
+        //      paddingHorizontal: 5 
+        // },
+        // searchIcon_store:{
+        //     height: 50, backgroundColor: '#252A37', borderColor: '#50596D',
+        //     borderRadius: 5,
+        //     borderWidth: 1.5, flexDirection: 'row', padding: 5, alignItems: 'center'
+        // },
+        // contentSearch_store:{
+        //     fontSize: 18, marginLeft: 15, flex: 1, color: 'white' 
+        // },
+        //     boxpopular_store: {
+        //         marginHorizontal: 7,
+        //         color: 'white',
+        //         fontSize: 15,
+        //         fontFamily: 'gelion-bold',
+        //     },
+        //     boxpopular_sale_store: {
+        //         marginHorizontal: 7,
+        //         color: '#18E39C',
+        //         fontSize: 15,
+        //         fontFamily: 'gelion-bold',
+        //     },
+        //     boxpopular_Price_store: {
+        //         marginHorizontal: 7,
+        //         color: 'white',
+        //         textDecorationLine: 'line-through',
+        //         textDecorationStyle: 'solid',
+        //         fontSize: 15,
+        //         fontFamily: 'gelion-bold',
+        //     },
+        //     container_detail_store: {
+        //         flex: 1,
+        //         flexDirection: 'row',
+        //         marginTop: 10
+        //     },
+        //     content_price_store: {
+        //         flex: 1,
+        //         flexDirection: 'row',
+        //         color: 'white',
+        //         textDecorationLine: 'line-through',
+        //         textDecorationStyle: 'solid',
+        //         fontSize: 15,
+        //         fontFamily: 'gelion-bold',
+        //     },
+        //     content_sale_store: {
+        //         flex: 1,
+        //         flexDirection: 'row',
+        //         color: '#18E39C',
+        //         fontSize: 15,
+        //         marginRight: 60,
+        //         fontFamily: 'gelion-bold',
+        //     },
+        //     content_heart_store: {
 
-    boxpopular: {
-        marginHorizontal: 7,
-        color: 'white',
-        fontSize: 15,
-        fontFamily: 'gelion-bold',
-    },
-    boxpopular_sale: {
-        marginHorizontal: 7,
-        color: '#E77369',
-        fontSize: 15,
-        fontFamily: 'gelion-bold',
-    },
-    boxpopular_Price: {
-        marginHorizontal: 7,
-        color: 'white',
-        textDecorationLine: 'line-through',
-        textDecorationStyle: 'solid',
-        fontSize: 15,
-        fontFamily: 'gelion-bold',
-    },
-    container_detail: {
-        flex: 1,
-        flexDirection: 'row',
-        marginTop: 10
-    },
-    content_price: {
-        flex: 1,
-        flexDirection: 'row',
-        color: 'white',
-        textDecorationLine: 'line-through',
-        textDecorationStyle: 'solid',
-        fontSize: 15,
-        fontFamily: 'gelion-bold',
-    },
-    content_sale: {
-        flex: 1,
-        flexDirection: 'row',
-        color: '#E77369',
-        fontSize: 15,
-        marginRight: 60,
-        fontFamily: 'gelion-bold',
-    },
-    content_heart: {
+        //         flex: 1,
+        //         flexDirection: 'row',
+        //         color: 'white',
+        //         marginLeft: 90,
+        //     },
+        //     box_store: {
+        //         borderColor: 'red'
+        //     },
+        //     texts_header_store: {
+        //         color: 'white',
+        //         fontSize: 20,
+        //         fontFamily: 'gelion-bold',
+        //     },
+        //     texts_des_store: {
+        //         color: 'white',
+        //         fontSize: 15,
+        //         width: 200,
+        //         fontFamily: 'gelion-regular',
+        //     },
+        //     barslide_store: {
+        //         marginHorizontal: 10,
+        //         marginBottom: 10,
+        //         backgroundColor: '#18E39C',
+        //         borderRadius: 3,
+        //         width: 60,
+        //         height: 5,
+        //     },
+        //     container_content_store: {
+        //         marginHorizontal: 10,
+        //         marginVertical: 10,
+        //         color: 'white',
+        //         fontFamily: 'gelion-bold',
+        //         fontSize: 18,
+        //     },
+        //     content_detail_store: {
+        //         flex: 1,
+        //         flexDirection: 'column',
+        //         marginHorizontal: 10,
+        //         marginVertical: 10,
+        //         fontFamily: 'gelion-bold',
+        //         fontSize: 15,
+        //     },
+        //     search_store: {
+        //         marginHorizontal: 10,
+        //         paddingVertical: 10,
+        //         left: 15,
+        //         borderColor: '#50596D',
+        //         borderWidth: 1,
+        //         borderEndWidth: 2,
+        //         height: 50,
+        //         width: 80
 
-        flex: 1,
-        flexDirection: 'row',
-        color: 'white',
-        marginLeft: 90,
-    },
-    box: {
-        borderColor: 'red'
-    },
-    texts_header: {
-        color: 'white',
-        fontSize: 20,
-        fontFamily: 'gelion-bold',
-    },
-    texts_des: {
-        color: 'white',
-        fontSize: 15,
-        width: 200,
-        fontFamily: 'gelion-regular',
-    },
-    barslide: {
-        marginHorizontal: 10,
-        marginBottom: 10,
-        backgroundColor: '#E77369',
-        borderRadius: 3,
-        width: 60,
-        height: 5,
-    },
-    container_content: {
-        marginHorizontal: 10,
-        marginVertical: 10,
-        color: 'white',
-        fontFamily: 'gelion-bold',
-        fontSize: 18,
-    },
-    content_detail: {
-        flex: 1,
-        flexDirection: 'column',
-        marginHorizontal: 10,
-        marginVertical: 10,
-        fontFamily: 'gelion-bold',
-        fontSize: 15,
-    },
-    search: {
-        marginHorizontal: 10,
-        paddingVertical: 10,
-        left: 15,
-        borderColor: '#50596D',
-        borderWidth: 1,
-        borderEndWidth: 2,
-        height: 50,
-        width: 80
+        //     },
+        //     search_icon_store: {
+        //         color: 'white',
+        //         marginHorizontal: 28,
+        //         marginVertical: 5,
+        //     },
+        //     container_image_store: {
+        //         flex: 1,
+        //         flexDirection: 'row'
+        //     },
 
-    },
-    search_icon: {
-        color: 'white',
-        marginHorizontal: 28,
-        marginVertical: 5,
-    },
-    container_image: {
-        flex: 1,
-        flexDirection: 'row'
-    },
-
-    image: {
-        marginHorizontal: 10,
-        marginVertical: 10,
-    },
-    container_box: {
-        borderTopColor: '#2F3543',
-        borderWidth: 1,
+        //     image_store: {
+        //         marginHorizontal: 10,
+        //         marginVertical: 10,
+        //     },
+        //     container_box_store: {
+        //         borderTopColor: '#2F3543',
+        //         borderWidth: 1,
 
     }
 })
