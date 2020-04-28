@@ -10,7 +10,8 @@ import { AppLoading } from 'expo';
 const getFonts = () => Font.loadAsync({
   'gelion-bold': require('./assets/fonts/Gelion-Bold.ttf'),
   'gelion-medium': require('./assets/fonts/Gelion-Medium.ttf'),
-  'gelion-regular': require('./assets/fonts/Gelion-Regular.ttf')
+  'gelion-regular': require('./assets/fonts/Gelion-Regular.ttf'),
+  'Arialic': require('./assets/fonts/Arialic-Hollow.ttf')
 });
 
 export default function App() {
