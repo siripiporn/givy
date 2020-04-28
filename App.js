@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
-import Navigation from './screens/navigation';
+// import Navigation from './routes/homeSlack';
+// import Navigation from './screens/navigation';
+import Navigation from './routes/homeStack';
+ 
 import { AppLoading } from 'expo';
 
 const getFonts = () => Font.loadAsync({
@@ -15,9 +18,10 @@ export default function App() {
 
   if (fontLoaded) {
     return (
-      <NavigationContainer>
+       <NavigationContainer> 
       <Navigation />
-    </NavigationContainer>
+   
+      </NavigationContainer>
      
     )
   } else {
