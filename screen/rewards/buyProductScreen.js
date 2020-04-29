@@ -149,16 +149,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row', flex: 1, alignItems: 'center',
     },
     number_coins: {
-        color: 'white', marginLeft: 5
+        color: 'white', marginLeft: 5 ,
     },
     green_box: {
         marginHorizontal: 16, marginTop: 5, flex: 1, flexDirection: 'row', backgroundColor: '#18E39C', borderRadius: 3, justifyContent: 'space-between'
     },
     small_box: {
-        height: 50, backgroundColor: '#fff', height: 30, width: 30, margin: 15, marginTop: 20
+        height: 50, backgroundColor: '#fff', height: 30, width: 30, margin: 15, marginTop: 20,  
     },
     content_box: {
-        textAlign: 'center', marginTop: 4
+        textAlign: 'center', marginTop: 4,fontSize: 18, color: '#18E39C', fontFamily: 'gelion-bold',
     },
     content_checkOut: {
         height: 50, marginTop: 22, fontSize: 20, color: 'white', fontFamily: 'gelion-bold'
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row', justifyContent: 'flex-end', marginTop: 28
     },
     content_coins: {
-        color: 'white', marginLeft: 5, marginRight: 10
+        color: 'white', marginLeft: 5, marginRight: 10, fontSize: 18, fontFamily: 'gelion-bold', 
     },
     box_inputs: {
         height: 50, marginHorizontal: 16, width: 380, backgroundColor: '#303540', color: 'white', textAlign: 'center', marginTop: 5,

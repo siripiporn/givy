@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, FlatList, Keyboard, TouchableOpacity, Button, Image, SafeAreaView, ScrollView } from "react-native";
 import { globalStyles } from '../styles/styleGlobal';
-import * as Animatable from 'react-native-animatable';
-import Icon from 'react-native-vector-icons/Ionicons';
 import Shocked from '../images/icons/shocked.svg';
 import TermIcon from '../images/icons/termIcon.svg'
-import Fliter from '../images/icons/fliter.svg';
 import Heart from '../images/icons/favorite_heart.svg';
-import DetailOrder from '../order/detailProduct';
-import DetailProductScreen from '../rewards/detailProductScreen';
-import SearchBox from '../shared/searchBox';
+import ChallengesScreen from '../challenges/challengesScreen';
+
 
 const listItems = [
     {
@@ -90,15 +86,12 @@ export default class FeedRewardScreen extends Component {
                         </View>
                     </View>
                 </View>
-                <View style={{ flexDirection: 'column', flex: 1, marginRight: 16, marginTop: 5 }}>
-                    <Text style={{ fontSize: 12, color: '#18E39C', alignSelf: 'flex-end' }}>Your conins expires October 31,2021</Text>
-                </View>
-
-                <TouchableOpacity>
-                    <View style={{ marginTop: 5, marginHorizontal: 16, borderColor: '#50596D', borderRadius: 5, borderWidth: 1.5, height: 40, width: 375 }}>
-                        <Text style={{ marginTop: 10, textAlign: "center", color: 'white' }}>View Challenges</Text>
+                
+ 
+                    <View style={{ marginTop: 15, marginHorizontal: 16, borderColor: '#50596D', borderRadius: 5, borderWidth: 1.5, height: 40, width: 375 }}>
+                        <Text style={{ marginTop: 8, textAlign: "center", color: '#18E39C' }}>Your conins expires October 31,2021</Text>
                     </View>
-                </TouchableOpacity>
+             
                 <View style={globalStyles.container_content_store}>
                     <Text style={globalStyles.container_content_store}>Rewards Shop</Text>
                     <Text style={globalStyles.barslide_store}></Text>
