@@ -1,16 +1,16 @@
 import React from 'react';
-import { View, Text, TouchableOpacity,Button,StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
 import { globalStyles } from '../styles/styleGlobal';
- 
+
 import SegmentedControlTab from 'react-native-segmented-control-tab'
 import PointComponent from '../shared/point';
 import FeedRewardScreen from '../rewards/feedRewardScreen';
 import FeedOrderScreen from '../order/feedOrderScreen';
 import HomeCommunityFeedScreen from '../community/homeCommunityFeedScreen'
 
- 
+
 export default class NavMenuPage extends React.Component {
-  
+
   constructor() {
     super();
     this.state = {
@@ -23,19 +23,19 @@ export default class NavMenuPage extends React.Component {
     //handle tab selection for custom Tab Selection SegmentedControlTab
     this.setState(prevState => ({ ...prevState, customStyleIndex: index }));
   };
-  
+
 
   render() {
     // const { navigate } = this.props.navigation;
     const { customStyleIndex } = this.state;
-   
+
     return (
       <View >
 
 
         {/* Simple Segmented with Custom Styling*/}
         <SegmentedControlTab
-          values={['Rewards', '  Community']}
+          values={['Rewards', 'Community']}
           selectedIndex={customStyleIndex}
           onTabPress={this.handleCustomIndexSelect}
           borderRadius={0}
@@ -52,25 +52,26 @@ export default class NavMenuPage extends React.Component {
         />
         {customStyleIndex === 0 && (
           <View style={styles.container_feed}>
-             <FeedRewardScreen navigation={this.props.navigation} />  
-       
-           
-           {/* <Button title="PointComponent" onPress={() => this.props.navigation.navigate('PointComponent')}/>   */}
+            <FeedRewardScreen navigation={this.props.navigation} />
+
+
+            {/* <Button title="PointComponent" onPress={() => this.props.navigation.navigate('PointComponent')}/>   */}
           </View>
         )}
         {customStyleIndex === 1 && (
           <View style={styles.search}>
-              <HomeCommunityFeedScreen navigation={this.props.navigation} /> 
-        {/* <FeedOrderScreen navigation={this.props.navigation} />   */}
-             {/* <Button title="PointComponent" onPress={() => this.props.navigation.navigate('PointComponent')}/>   */}
+            <HomeCommunityFeedScreen navigation={this.props.navigation} />
+            {/* <FeedOrderScreen navigation={this.props.navigation} />   */}
+            {/* <Button title="PointComponent" onPress={() => this.props.navigation.navigate('PointComponent')}/>   */}
           </View>
         )}
-        {customStyleIndex === 2 && (
-          <View style={styles.search}>
- {/* <FeedRewardScreen navigation={this.props.navigation} />   */}
-          </View>
 
-        )}
+        {/* {customStyleIndex === 2 && (
+          <View style={styles.search}>
+ <FeedRewardScreen navigation={this.props.navigation} />  
+          </View>
+        )} */}
+
       </View>
     );
   }

@@ -165,6 +165,7 @@ export default function DetailProductScreen({ navigation }) {
 
                     </ScrollView>
                 </SafeAreaView>
+           
             </View>
             <View style={{ backgroundColor: '#21242E', height: 60, }}>
                 <View style={{ flexDirection: 'row', flex: 1, alignItems: 'center', }}>

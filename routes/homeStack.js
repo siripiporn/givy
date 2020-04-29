@@ -161,9 +161,9 @@ export default Navigator = () => {
        
       <Stack.Screen name='HomeScreen' component={TabOnbuttom} options={{title: ' ', headerStyle: {height: 25,backgroundColor: '#252A37',},headerTintColor: '#fff',}}/>
       <Stack.Screen name='RewardsScreen' component={TabOnbuttom} options={{ title: 'RewardsScreen' }} />
-      <Stack.Screen name='DetailProductScreen' component={DetailProductScreen} options={{ title: 'DetailProductScreen' }} />
-      <Stack.Screen name='BuyProductScreen' component={BuyProductScreen} options={{ title: 'BuyProductScreen' }} />
-      <Stack.Screen name='CartProductScreen' component={CartProductScreen} options={{ title: 'CartProductScreen' }} />
+      <Stack.Screen name='DetailProductScreen' component={DetailProductScreen} options={{title: 'GET FRESH', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
+      <Stack.Screen name='BuyProductScreen' component={BuyProductScreen} options={{title: 'GET FRESH', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
+      <Stack.Screen name='CartProductScreen' component={CartProductScreen} options={{title: ' Purchase Confirmation', justifycontent: 'center', headerTitleAlign: 'center' , headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff',fontSize: 15, }} />
       <Stack.Screen name='FeedRewardScreen' component={FeedRewardScreen} options={{ title: 'FeedRewardScreen' }} />
 
       {/* Community Screen */}

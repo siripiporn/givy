@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, FlatList, Keyboard, TouchableOpacity, Button,Image, SafeAreaView, ScrollView } from "react-native";
+import { View, Text, StyleSheet, TextInput, FlatList, Keyboard, TouchableOpacity, Button, Image, SafeAreaView, ScrollView } from "react-native";
 import { globalStyles } from '../styles/styleGlobal';
 import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Shocked from '../images/icons/shocked.svg';
+import TermIcon from '../images/icons/termIcon.svg'
 import Fliter from '../images/icons/fliter.svg';
 import Heart from '../images/icons/favorite_heart.svg';
 import DetailOrder from '../order/detailProduct';
 import DetailProductScreen from '../rewards/detailProductScreen';
+import SearchBox from '../shared/searchBox';
 
 const listItems = [
     {
@@ -24,52 +27,80 @@ const price = 300;
 const price_sale = 100;
 const name_product = 'Ice Cappucino';
 
- 
+
 export default class FeedRewardScreen extends Component {
- 
-    state = {
-        searchBarFocused: false
-    }
-    componentDidMount() {
-        this.keyboardDidShow = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow)
-        this.keyboardWillShow = Keyboard.addListener('keyboardWillShow', this.keyboardWillShow)
-        this.keyboardWillHide = Keyboard.addListener('keyboardWillHide', this.keyboardWillHide)
-    }
-    keyboardDidShow = () => {
-        this.setState({ searchBarFocused: true })
-    }
-    keyboardWillShow = () => {
-        this.setState({ searchBarFocused: true })
-    }
-    keyboardWillHide = () => {
-        this.setState({ searchBarFocused: false })
-    }
+
     render() {
         return (
-            <View style={styles.container}>
-                <View style={globalStyles.searchBox_store}>
-                    <Animatable.View style={globalStyles.searchIcon_store}>
-                        <Animatable.View animation={this.state.searchBarFocused ? "fadeInLeft" : "fadeInRight"} duration={400}>
-                            <Icon name={this.state.searchBarFocused ? "md-arrow-back" : "ios-search"} style={{ fontSize: 24, color: 'white' }} />
-                        </Animatable.View>
-                        <TextInput placeholder="Search menu, category" style={globalStyles.contentSearch_store} />
-                        {/* <Button title="Press me" color="#252A37" style={{height: 50, backgroundColor: '#252A37', borderColor: '#50596D',}} /> */}
-                        <TouchableOpacity style={globalStyles.search_store}>
-                            <Text style={globalStyles.search_icon_store}>
-                                <Fliter />  </Text>
-                        </TouchableOpacity>
-                    </Animatable.View>
+            <View>
+                {/* <View><SearchBox />
+            </View> */}
 
+                {/* Box Tems */}
+                <View style={styles.box_terms}>
+                    <View style={{ height: 50, flex: 1 }}>
+                        <View style={styles.circle}>
+                            <Shocked />
+                        </View>
+                    </View>
+                    <View style={{ height: 50, flex: 4 }}>
+                        <Text style={styles.contents_terms}
+                        >Earn a point every 10 THB you spend</Text>
+                    </View>
                 </View>
-                <FlatList
-                    style={{ backgroundColor: this.state.searchBarFocused ? 'rgba(0,0,0,0.3)' : 'white' }}
-                    data={listItems}
-                    //renderItem={({ item }) => <Text style={{ padding: 20, fontSize: 18, backgroundColor: '#252A37',color: 'white' }}>{item.id}</Text>}
-                    keyExtractor={(index) => index.toString()}
-                />
-                {/* container New Popular */}
+
+                <View style={{ flex: 1, flexDirection: 'row', marginHorizontal: 16, marginTop: 15 }}>
+                    <View style={{ height: 50, flex: 3.5 }}>
+                        <View>
+                            <Text style={styles.content_small}>Member Type</Text>
+                            <Text style={styles.content_big}>Standard</Text>
+                        </View>
+                    </View>
+                    <View style={{ height: 50, flex: 3 }}>
+                        <View>
+                            <Text style={styles.content_small}>Points</Text>
+                            <Text style={styles.content_big}>300</Text>
+                        </View>
+                    </View>
+
+                    <View style={{ height: 50, flex: 3 }}>
+                        <View>
+                            <Text style={styles.content_small}>Discount</Text>
+                            <Text style={styles.content_big}>5%</Text>
+                        </View>
+                    </View>
+                    <View style={{ height: 50, flex: 1.3, }}>
+                        <View style={{ marginTop: 5, borderColor: '#50596D', borderRadius: 5, borderWidth: 1.5, height: 40, width: 45 }}>
+                            <View style={{ marginTop: 10, alignItems: 'center' }}><TermIcon /></View>
+                        </View>
+                    </View>
+                </View>
+
+                {/* Box Challanges */}
+                <View style={{ flexDirection: 'row', flex: 1, marginHorizontal: 16, marginTop: 30, }}>
+                    <View style={{ backgroundColor: '#1C202A', }}>
+                        <Text style={{ fontSize: 12, color: '#18E39C', alignSelf: 'flex-end' }}>49/200</Text>
+                        <View style={{ flex: 1, flexDirection: 'row' }}>
+                            <View style={{ width: 188, height: 60, backgroundColor: '#50596D', borderBottomLeftRadius: 5, borderBottomRightRadius: 5, marginRight: 3, }}>
+                                <View style={{ width: (SettingPageCSS.container / 5), height: 60, backgroundColor: '#fff' }}></View>
+                            </View>
+                            <View style={{ width: 188, height: 60, backgroundColor: '#50596D', borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }} >
+                                <View style={{ width: (SettingPageCSS.container / 10000), height: 60, backgroundColor: '#fff' }}></View>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+                <View style={{ flexDirection: 'column', flex: 1, marginRight: 16, marginTop: 5 }}>
+                    <Text style={{ fontSize: 12, color: '#18E39C', alignSelf: 'flex-end' }}>Your conins expires October 31,2021</Text>
+                </View>
+
+                <TouchableOpacity>
+                    <View style={{ marginTop: 5, marginHorizontal: 16, borderColor: '#50596D', borderRadius: 5, borderWidth: 1.5, height: 40, width: 375 }}>
+                        <Text style={{ marginTop: 10, textAlign: "center", color: 'white' }}>View Challenges</Text>
+                    </View>
+                </TouchableOpacity>
                 <View style={globalStyles.container_content_store}>
-                    <Text style={globalStyles.container_content_store}>What's popular here</Text>
+                    <Text style={globalStyles.container_content_store}>Rewards Shop</Text>
                     <Text style={globalStyles.barslide_store}></Text>
                 </View>
 
@@ -80,19 +111,19 @@ export default class FeedRewardScreen extends Component {
                         <View style={globalStyles.container_store}>
                             <View style={globalStyles.imageContainer_store}>
 
-                             <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailProductScreen')}> 
-                             <Image  style={globalStyles.image_store}  source={require("../images/products/product1.png")}   />
-                             </TouchableOpacity> 
-                             
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailProductScreen')}>
+                                    <Image style={globalStyles.image_store} source={require("../images/products/product1.png")} />
+                                </TouchableOpacity>
+
                                 <Text style={globalStyles.boxpopular_store}>{name_product}</Text>
                                 <Text style={globalStyles.boxpopular_Price_store}>${price}</Text>
                                 <Text style={globalStyles.boxpopular_sale_store}>${price_sale}</Text>
-                             
+
 
                             </View>
                             <View style={globalStyles.imageContainer_store}>
                                 <Image style={globalStyles.image_store} source={require("../images/products/product2.png")} />
-                            
+
                                 <Text style={globalStyles.boxpopular_store}>{name_product}</Text>
                                 <Text style={globalStyles.boxpopular_Price_store}>${price}</Text>
                                 <Text style={globalStyles.boxpopular_sale_store}>${price_sale}</Text>
@@ -132,7 +163,7 @@ export default class FeedRewardScreen extends Component {
 
                 {/* Recommended */}
                 <View style={globalStyles.container_content_store}>
-                    <Text style={globalStyles.container_content_store}>Recommended</Text>
+                    <Text style={globalStyles.container_content_store}>Products</Text>
                     <Text style={globalStyles.barslide_store}></Text>
                 </View>
                 {/* container Box */}
@@ -237,8 +268,8 @@ export default class FeedRewardScreen extends Component {
                 <View style={globalStyles.container_image_store}>
                     <TouchableOpacity >
                         <View style={globalStyles.image_store}>
-                            <Image source={require('../images/products/Rectangle.png')}  />
-                             
+                            <Image source={require('../images/products/Rectangle.png')} />
+
                         </View>
                     </TouchableOpacity>
                     <View style={globalStyles.content_detail_store}>
@@ -257,11 +288,45 @@ export default class FeedRewardScreen extends Component {
     }
 }
 
+const SettingPageCSS = {
+    container: 343,
+    color: "rgba(24, 227, 156, 1)",
+    h1: 36,
+    h2: 15,
+    bg: '#252A37'
+}
+
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
         paddingTop: 5,
         flex: 1,
+    },
+    textGreen: {
+
+    },
+
+    circle: {
+        alignItems: 'center',
+        marginHorizontal: 30,
+        marginTop: 15,
+
+    },
+    box_terms: {
+        flexDirection: 'row', flex: 1, backgroundColor: '#50596D', height: 50
+    },
+    contents_terms: {
+        color: 'white', fontFamily: 'gelion-bold', fontSize: 15, textAlign: 'left', marginVertical: 15
+    },
+    content_small: {
+        color: '#18E39C',
+        fontSize: 12,
+        fontFamily: 'gelion-regular',
+    },
+    content_big: {
+        color: 'white',
+        fontSize: 18,
+        fontFamily: 'gelion-bold',
     }
 })
 
