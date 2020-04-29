@@ -17,7 +17,7 @@ export default function HomeScreen ({ navigation }) {
             <View style={styles.container}>
            
                 <View style={styles.title}><Title /></View>
-                <View style={styles.point} style={{marginHorizontal: 16,}}><PointComponent  navigation={navigation}/></View> 
+                {/* <View style={styles.point} style={{marginHorizontal: 16,}}><PointComponent  navigation={navigation}/></View>  */}
                 <View style={styles.aboutbrand} style={{marginHorizontal: 16,}}><AboutBrand navigation={navigation}/></View>
                 <View style={styles.navmenu} style={{marginHorizontal: 16,}}><NavButtom navigation={navigation}/></View>
                 <View style={styles.story}><Story navigation={navigation}/></View>

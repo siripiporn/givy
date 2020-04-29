@@ -87,7 +87,6 @@ export default class FeedRewardScreen extends Component {
                     </View>
                 </View>
                 
- 
                     <View style={{ marginTop: 15, marginHorizontal: 16, borderColor: '#50596D', borderRadius: 5, borderWidth: 1.5, height: 40, width: 375 }}>
                         <Text style={{ marginTop: 8, textAlign: "center", color: '#18E39C' }}>Your conins expires October 31,2021</Text>
                     </View>

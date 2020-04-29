@@ -26,13 +26,15 @@ import Story from '../screen/shared/story';
 import NavMenuPage from '../screen/navMenu/navMenuPage';
 import FeedRewardScreen from '../screen/rewards/feedRewardScreen';
 import FeedOrderScreen from '../screen/order/feedOrderScreen';
-
 import HomeScreen from '../screen/homeScreen';
-
 import DetailOrder from '../screen/order/detailProduct';
 import ConfirmationProduct from '../screen/order/confirmationProduct';
-
 import ChallengesScreen from '../screen/challenges/challengesScreen';
+// Profile
+import  ItemsPage from '../screen/pageOnButtom/proFile/itemsPage'
+import ActivityPage from '../screen/pageOnButtom/proFile/activityPage';
+import ChallengePage from '../screen/pageOnButtom/proFile/challengePage';
+ 
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator();
@@ -176,8 +178,12 @@ export default Navigator = () => {
       <Stack.Screen name='DetailExplore' component={DetailExplore} options={{ title: 'DetailExplore' }} />
       <Stack.Screen name='WalletPage' component={WalletPage} options={{ title: 'WalletPage' }} />
       <Stack.Screen name='ChatPage' component={ChatPage} options={{ title: 'ChatPage' }} />
-      <Stack.Screen name='ProfilePage' component={ProfilePage} options={{ title: 'ProfilePage' }} />
-
+    
+     {/* Profile Screen */}
+      <Stack.Screen name='ProfilePage' component={ProfilePage} navigationOptions = {{ title: 'Home' , headerStyle: {height: 70,backgroundColor: '#252A37',  },}}/>
+      <Stack.Screen name='ItemsPage' component={ItemsPage} options={{title: 'name', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
+      <Stack.Screen name='ActivityPage' component={ActivityPage} options={{title: 'ActivityPage', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
+      <Stack.Screen name='ChallengePage' component={ChallengePage} options={{title: 'ChallengePage', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
 
       {/* Shared Component*/}
       <Stack.Screen name='Title' component={Title} options={{ title: 'Title' }} />

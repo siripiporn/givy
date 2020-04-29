@@ -8,8 +8,7 @@ export default function Title ({ navigation }) {
     return (
            <View style={globalStyles.container_title}>
             <Text style={globalStyles.contents_title}>
-            
-                <Image style={globalStyles.imagestar_title} source={require("../images/logo/star.jpg")} /> getfresh</Text>
+            get.fresh</Text>
                 {/* <Button title="BuyProductScreen" onPress={() => navigation.navigate('BuyProductScreen')}/> */}
         </View>
         
