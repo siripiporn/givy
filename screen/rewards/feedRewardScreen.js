@@ -28,7 +28,7 @@ export default class FeedRewardScreen extends Component {
 
     render() {
         return (
-            <View>
+            <View >
                 {/* <View><SearchBox />
             </View> */}
 
@@ -73,24 +73,27 @@ export default class FeedRewardScreen extends Component {
                 </View>
 
                 {/* Box Challanges */}
-                <View style={{ flexDirection: 'row', flex: 1, marginHorizontal: 16, marginTop: 30, }}>
+                <View style={{ flexDirection: 'column', flex: 1, marginHorizontal: 16, marginTop: 30, marginRight: 16 }}>
                     <View style={{ backgroundColor: '#1C202A', }}>
                         <Text style={{ fontSize: 12, color: '#18E39C', alignSelf: 'flex-end' }}>49/200</Text>
-                        <View style={{ flex: 1, flexDirection: 'row' }}>
-                            <View style={{ width: 188, height: 60, backgroundColor: '#50596D', borderBottomLeftRadius: 5, borderBottomRightRadius: 5, marginRight: 3, }}>
-                                <View style={{ width: (SettingPageCSS.container / 5), height: 60, backgroundColor: '#fff' }}></View>
+
+                        <View style={{ flex: 1, flexDirection: 'row',   }}>
+                            <View style={{ width: (SettingbgPoint.container / 0.5),  flex: 1, flexDirection: 'row', fontSize: 12, height: 60, backgroundColor: '#50596D', borderBottomLeftRadius: 5, borderBottomRightRadius: 5,  }} >
+                            <View style={{ width: (SettingPageCSS.container / 4), height: 60, backgroundColor: '#fff',  }}></View>
                             </View>
-                            <View style={{ width: 188, height: 60, backgroundColor: '#50596D', borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }} >
-                                <View style={{ width: (SettingPageCSS.container / 10000), height: 60, backgroundColor: '#fff' }}></View>
-                            </View>
+                                
+                              <View style={{ width: (SettingbgPoint.container / 0.5), marginLeft:3,flex: 1, flexDirection: 'row', fontSize: 12, height: 60, backgroundColor: '#50596D', borderBottomLeftRadius: 5, borderBottomRightRadius: 5,  }}>
+                              <View style={{ width: (SettingPageCSS.container / 4000), height: 60, backgroundColor: '#fff',  }}></View>
+                              </View>
                         </View>
+
                     </View>
                 </View>
-                
-                    <View style={{ marginTop: 15, marginHorizontal: 16, borderColor: '#50596D', borderRadius: 5, borderWidth: 1.5, height: 40, width: 375 }}>
-                        <Text style={{ marginTop: 8, textAlign: "center", color: '#18E39C' }}>Your conins expires October 31,2021</Text>
-                    </View>
-             
+
+                <View style={{ marginTop: 15, borderColor: '#50596D', borderRadius: 5, borderWidth: 1.5, height: 40, marginHorizontal: 16, marginTop: 30, marginRight: 16 }}>
+                    <Text style={{ marginTop: 8, textAlign: "center", color: '#18E39C' }}>Your conins expires October 31,2021</Text>
+                </View>
+
                 <View style={globalStyles.container_content_store}>
                     <Text style={globalStyles.container_content_store}>Rewards Shop</Text>
                     <Text style={globalStyles.barslide_store}></Text>
@@ -153,11 +156,12 @@ export default class FeedRewardScreen extends Component {
                     </ScrollView>
                 </SafeAreaView>
 
-                {/* Recommended */}
+                {/* Product */}
                 <View style={globalStyles.container_content_store}>
                     <Text style={globalStyles.container_content_store}>Products</Text>
                     <Text style={globalStyles.barslide_store}></Text>
                 </View>
+
                 {/* container Box */}
                 <View style={globalStyles.container_box_store} />
                 <View style={globalStyles.container_image_store}>
@@ -177,6 +181,7 @@ export default class FeedRewardScreen extends Component {
 
                     </View>
                 </View>
+
                 <View style={globalStyles.container_box_store} />
                 <View style={globalStyles.container_image_store}>
                     <TouchableOpacity >
@@ -288,11 +293,22 @@ const SettingPageCSS = {
     bg: '#252A37'
 }
 
+
+const SettingbgPoint = {
+    container: 343,
+    color: "#50596D",
+    h1: 36,
+    h2: 15,
+    bg: '#252A37'
+}
+
+
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
         paddingTop: 5,
         flex: 1,
+
     },
     textGreen: {
 

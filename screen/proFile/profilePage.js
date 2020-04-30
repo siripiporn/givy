@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Button, StyleSheet, Image } from 'react-native';
-import Bell from '../image/Profile/Bell.svg'
-import HomeIcon from '../image/Profile/home.svg'
+import Bell from '../images/Profile/Bell.svg'
+import HomeIcon from '../images/Profile/home.svg'
 import SegmentedControlTab from 'react-native-segmented-control-tab'
 import ActivityPage from './activityPage';
 import ItemsPage from './itemsPage';
@@ -38,7 +38,7 @@ export default class ProfilePage extends React.Component {
 
                     <View style={{ flex: 3, flexDirection: 'row', }}>
                         <View style={styles.circle} >
-                            <Image style={styles.circle_small} source={require("../image/Profile/man.jpg")} />
+                            <Image style={styles.circle_small} source={require("../images/Profile/man.jpg")} />
                         </View>
 
                         <View style={{ marginHorizontal: 20, flex: 3, flexDirection: 'row', }}>
@@ -81,13 +81,13 @@ export default class ProfilePage extends React.Component {
                         </View>
                     )}
                     {customStyleIndex === 1 && (
-                        <View style={styles.search}>
+                        <View style={styles.container_feed}>
 
                             <ItemsPage />
                         </View>
                     )}
                     {customStyleIndex === 2 && (
-                        <View style={styles.search}>
+                        <View style={styles.container_feed}>
 
                             <ChallengePage />
                         </View>

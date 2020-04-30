@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, SafeAreaView, ScrollView, Image, FlatList , TouchableOpacity} from 'react-native';
- 
+import { View,StyleSheet, SafeAreaView, ScrollView,} from 'react-native';
 import Title from '../screen/shared/title';
 import AboutBrand from '../screen/shared/aboutBrand';
-import PointComponent from '../screen/shared/point';
 import NavButtom from '../screen/shared/navButtom';
 import Story from '../screen/shared/story'
 import NavMenuPage from '../screen/navMenu/navMenuPage';
@@ -18,8 +16,8 @@ export default function HomeScreen ({ navigation }) {
            
                 <View style={styles.title}><Title /></View>
                 {/* <View style={styles.point} style={{marginHorizontal: 16,}}><PointComponent  navigation={navigation}/></View>  */}
-                <View style={styles.aboutbrand} style={{marginHorizontal: 16,}}><AboutBrand navigation={navigation}/></View>
-                <View style={styles.navmenu} style={{marginHorizontal: 16,}}><NavButtom navigation={navigation}/></View>
+                <View style={styles.aboutbrand} style={{marginHorizontal: 16}}><AboutBrand navigation={navigation}/></View>
+                <View style={styles.navmenu} style={{marginHorizontal: 16, marginRight:16,}}><NavButtom navigation={navigation}/></View>
                 <View style={styles.story}><Story navigation={navigation}/></View>
                 <View style={styles.menu}><NavMenuPage navigation={navigation}/></View>
                  
@@ -27,8 +25,6 @@ export default function HomeScreen ({ navigation }) {
         </ScrollView>
     </SafeAreaView>
 
-     
-       
     )
 }
 
@@ -36,7 +32,7 @@ export default function HomeScreen ({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor:'#252A37',
-        marginTop:5,
+        marginTop:2,
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
@@ -51,12 +47,12 @@ const styles = StyleSheet.create({
     title: {
         flex: 1,
         flexDirection: 'column',
-        
+        height:180
     },
     aboutbrand: {
         flex: 1,
         flexDirection: 'column',
-         
+        
     },
     feed: {
         flex: 1,

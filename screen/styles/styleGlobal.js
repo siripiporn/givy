@@ -1,6 +1,6 @@
 
 import { StyleSheet } from 'react-native';
- 
+
 
 export const globalStyles = StyleSheet.create({
 
@@ -36,7 +36,7 @@ export const globalStyles = StyleSheet.create({
     },
     coinIcon_point: {
         marginHorizontal: 9,
-       
+
     },
     basketIcon_point: {
         marginHorizontal: 9,
@@ -44,11 +44,11 @@ export const globalStyles = StyleSheet.create({
 
     //Nav page
     container_nav: {
-        marginHorizontal:2,
+        marginHorizontal: 2,
         flex: 1,
         flexDirection: 'row',
         marginVertical: 10,
-        
+
 
     },
     order_buttom_nav: {
@@ -59,6 +59,7 @@ export const globalStyles = StyleSheet.create({
         borderRadius: 5,
         borderWidth: 1.5,
         width: 130,
+
 
     },
     buttom_content_nav: {
@@ -135,7 +136,7 @@ export const globalStyles = StyleSheet.create({
 
     //About Brand
     container_brand: {
-        marginTop: 16,
+
         flex: 1,
         flexDirection: 'row',
         marginHorizontal: 2,
@@ -185,7 +186,8 @@ export const globalStyles = StyleSheet.create({
         marginLeft: 2,
         width: 100,
         height: 100,
-        borderRadius: 50
+        borderRadius: 50,
+        justifyContent: 'space-between'
     },
     discretion_brand: {
         marginHorizontal: 10,
@@ -215,22 +217,20 @@ export const globalStyles = StyleSheet.create({
         fontFamily: 'gelion-bold',
 
     },
-    container_buttom: {
-        flex: 1, flexDirection: 'row', justifyContent: 'space-between',
-    },
+
     buttom_subscribe: {
         width: 110,
         height: 30,
-        marginTop: 5,
-        paddingVertical: 8,
-        borderColor: '#50596D',
+        marginTop: 35,
+        paddingVertical: 5,
+        borderColor: 'white',
         borderRadius: 5,
         borderWidth: 1.5,
     },
     text_subscribe: {
 
         color: 'white',
-        fontSize: 10,
+        fontSize: 12,
         textAlign: 'center',
         fontFamily: 'gelion-bold',
     },
@@ -258,10 +258,10 @@ export const globalStyles = StyleSheet.create({
     },
 
     //Stroy Page
-    container_story:{
+    container_story: {
         flex: 1,
         flexDirection: 'column',
-  
+
 
     },
     container_image_story: {
@@ -275,7 +275,7 @@ export const globalStyles = StyleSheet.create({
     },
 
     image_story: {
-        height: 180,
+        height: 150,
         width: 150,
         alignItems: 'center',
         // backgroundColor: 'blue',
@@ -321,21 +321,22 @@ export const globalStyles = StyleSheet.create({
 
     //Store Page
     container_store: {
-        height:270,
+        height: 270,
         marginTop: 16,
         flex: 1,
         flexDirection: 'row',
         marginVertical: 30,
-        marginHorizontal: 5,
+        marginHorizontal: 16
 
     },
     imageContainer_store: {
         borderRadius: 2,
         marginHorizontal: 6,
+
     },
     image_store: {
-        height:200,
-         width: 180,
+        height: 200,
+        width: 180,
         borderRadius: 2,
         marginHorizontal: 6,
     },
@@ -359,8 +360,8 @@ export const globalStyles = StyleSheet.create({
         borderWidth: 1.5, flexDirection: 'row', padding: 5, alignItems: 'center'
     },
     contentSearch_store: {
-        fontSize: 18, 
-        marginLeft: 15, 
+        fontSize: 18,
+        marginLeft: 15,
         flex: 1, color: 'white'
     },
     boxpopular_store: {
@@ -386,11 +387,10 @@ export const globalStyles = StyleSheet.create({
     container_detail_store: {
         flex: 1,
         flexDirection: 'row',
-        marginTop: 10
+        marginTop: 10,
     },
     content_price_store: {
-        flex: 1,
-        flexDirection: 'row',
+
         color: 'white',
         textDecorationLine: 'line-through',
         textDecorationStyle: 'solid',
@@ -402,14 +402,13 @@ export const globalStyles = StyleSheet.create({
         flexDirection: 'row',
         color: '#18E39C',
         fontSize: 15,
-        marginRight: 60,
+
         fontFamily: 'gelion-bold',
     },
     content_heart_store: {
-        flex: 1,
-        flexDirection: 'row',
+
         color: 'white',
-        marginLeft: 90,
+
     },
     box_store: {
         borderColor: 'red'
@@ -451,7 +450,7 @@ export const globalStyles = StyleSheet.create({
     search_store: {
         marginHorizontal: 10,
         paddingVertical: 10,
-        left: 15,
+        left: 17,
         borderColor: '#50596D',
         borderWidth: 1,
         borderEndWidth: 2,
@@ -461,11 +460,13 @@ export const globalStyles = StyleSheet.create({
     },
     search_icon_store: {
         color: 'white',
-        marginHorizontal: 28,
+        marginHorizontal: 35,
+        marginTop: 12,
         marginVertical: 5,
     },
     container_image_store: {
-        marginHorizontal: 10,
+        marginHorizontal: 16,
+        marginRight: 16,
         flex: 1,
         flexDirection: 'row'
     },
@@ -476,19 +477,27 @@ export const globalStyles = StyleSheet.create({
     container_box_store: {
         borderTopColor: '#2F3543',
         borderBottomWidth: 0.5,
-       
+        flex: 1,
+        flexDirection: 'row',
+        marginRight: 16,
+        marginHorizontal: 16,
 
     },
 
     //Title Page
     container_title: {
-        marginTop: 16,
         flex: 1,
         flexDirection: 'row',
-        marginVertical: 30,
-        marginHorizontal: 5,
+
+        // marginVertical: 30,
+        // marginHorizontal: 5,
         justifyContent: 'center',
 
+    },
+    imageTitle: {
+        width: 200,
+        height: 200,
+        flex: 1
     },
     imagestar_title: {
         width: 20,

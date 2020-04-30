@@ -11,17 +11,19 @@ import HomeCommunityFeedScreen from '../screen/community/homeCommunityFeedScreen
 
 import CommentsFeedScreen from '../screen/community/commentsFeedScreen';
 import DetailFeedScreen from '../screen/community/detailFeedScreen';
-import ExplorePage from '../screen/pageOnButtom/explore/explorepage';
-import DetailExplore from '../screen/pageOnButtom/explore/detailExplore';
-import WalletPage from '../screen/pageOnButtom/wallet/walletPage';
-import ChatPage from '../screen/pageOnButtom/chat/chatPage';
-import ProfilePage from '../screen/pageOnButtom/proFile/profilePage';
+import ExplorePage from '../screen/explore/explorepage';
+import DetailExplore from '../screen/explore/detailExplore';
+import WalletPage from '../screen/wallet/walletPage';
+import ChatPage from '../screen/chat/chatPage';
+import ProfilePage from '../screen/proFile/profilePage';
 
 import Title from '../screen/shared/title';
 import PointComponent from '../screen/shared/point';
 import NavButtom from '../screen/shared/navButtom';
 import AboutBrand from '../screen/shared/aboutBrand';
 import SearchBox from '../screen/shared/searchBox';
+
+
 import Story from '../screen/shared/story';
 import NavMenuPage from '../screen/navMenu/navMenuPage';
 import FeedRewardScreen from '../screen/rewards/feedRewardScreen';
@@ -31,9 +33,9 @@ import DetailOrder from '../screen/order/detailProduct';
 import ConfirmationProduct from '../screen/order/confirmationProduct';
 import ChallengesScreen from '../screen/challenges/challengesScreen';
 // Profile
-import  ItemsPage from '../screen/pageOnButtom/proFile/itemsPage'
-import ActivityPage from '../screen/pageOnButtom/proFile/activityPage';
-import ChallengePage from '../screen/pageOnButtom/proFile/challengePage';
+import  ItemsPage from '../screen/proFile/itemsPage'
+import ActivityPage from '../screen/proFile/activityPage';
+import ChallengePage from '../screen/proFile/challengePage';
  
 
 const Stack = createStackNavigator()
@@ -205,6 +207,8 @@ export default Navigator = () => {
        
       {/* ChallengesScreen */}
       <Stack.Screen name='ChallengesScreen' component={ChallengesScreen}  options={{title: 'ChallengesScreen', justifycontent: 'center' , headerStyle: {height: 70,backgroundColor: '#252A37', },headerTintColor: '#fff',}} />
+       
+   
        
     </Stack.Navigator>
   )
