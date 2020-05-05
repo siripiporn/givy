@@ -44,21 +44,23 @@ export const globalStyles = StyleSheet.create({
 
     //Nav page
     container_nav: {
-        marginHorizontal: 2,
+
         flex: 1,
         flexDirection: 'row',
-        marginVertical: 10,
+      
 
 
     },
     order_buttom_nav: {
-        marginTop: 10,
-        paddingVertical: 10,
+         
         borderColor: '#50596D',
         backgroundColor: '#18E39C',
         borderRadius: 5,
         borderWidth: 1.5,
-        width: 130,
+        paddingVertical: 5,
+        marginTop:5,
+        flex:2,
+        height:40
 
 
     },
@@ -73,59 +75,61 @@ export const globalStyles = StyleSheet.create({
         marginHorizontal: 20,
     },
     iconsee_nav: {
-        marginTop: 10,
+       
         marginHorizontal: 8,
         paddingVertical: 10,
         borderColor: '#50596D',
         borderRadius: 5,
         borderWidth: 1.5,
-        width: 70,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingVertical: 5,
+        marginTop:5,
+        flex:1,
+        height:40
     },
     iconseetext_nav: {
-        color: 'white',
-        marginHorizontal: 20,
-        textAlign: 'center',
-        fontSize: 15,
-        fontFamily: 'gelion-bold',
+    
+        textAlign:'center',
+       
 
     },
     call_nav: {
-        marginTop: 10,
+        marginTop: 5,
         marginHorizontal: 8,
         paddingVertical: 10,
         borderColor: '#50596D',
         borderRadius: 5,
         borderWidth: 1.5,
-        width: 70,
+        flex:1,
+         height:40
+
     },
     callcontents_nav: {
-        color: 'white',
-        marginHorizontal: 25,
-
-        paddingVertical: 5,
-        fontSize: 20,
-        fontFamily: 'gelion-bold',
+      
+      textAlign:'center',
+     
+      
     },
     location_nav: {
-        marginTop: 10,
-        marginHorizontal: 8,
-        paddingVertical: 10,
+        
+      
         borderColor: '#50596D',
         borderRadius: 5,
         borderWidth: 1.5,
-        width: 70,
+        justifyContent: 'center',
+       
+        marginTop:5,
+        flex:1,
+        height:40
+
 
     },
     locationcontents_nav: {
-        color: 'white',
-        marginHorizontal: 25,
-        paddingVertical: 2,
-
+        textAlign:'center',
     },
 
     buttom_nav: {
-        marginTop: 20,
+        marginTop: 21,
         borderColor: '#50596D',
         backgroundColor: '#18E39C',
         borderRadius: 5,
@@ -136,10 +140,26 @@ export const globalStyles = StyleSheet.create({
 
     //About Brand
     container_brand: {
+        flex: 4,
+        flexDirection: 'row',    
+    },
+    circle: {
+        width: 100,
+        height: 100,
+        borderRadius: 100 / 1,
+        backgroundColor: '#18E39C',
+    },
+    circle_small: {
+        width: 90,
+        height: 90,
+        borderRadius: 100 / 1,
+        backgroundColor: 'pink',
+        alignSelf: 'center',
+        marginTop: 5,
+        borderColor: '#1C202A',
+        borderWidth: 1.5
 
-        flex: 1,
-        flexDirection: 'row',
-        marginHorizontal: 2,
+
     },
     point_brand: {
         paddingRight: 10,
@@ -160,9 +180,9 @@ export const globalStyles = StyleSheet.create({
     },
     contents_category: {
         color: '#18E39C',
-        marginHorizontal: 5,
+        marginHorizontal: 6,
         fontSize: 15,
-        fontFamily: 'gelion-bold',
+        fontFamily: 'gelion-regular',
     },
     contents_name_brand: {
         color: '#EFEFEF',
@@ -174,7 +194,7 @@ export const globalStyles = StyleSheet.create({
         color: 'white',
         marginHorizontal: 5,
         fontSize: 15,
-        fontFamily: 'gelion-bold',
+        fontFamily: 'gelion-regular',
     },
     contents_pink: {
         marginHorizontal: 13,
@@ -183,19 +203,15 @@ export const globalStyles = StyleSheet.create({
         fontFamily: 'gelion-bold',
     },
     logo_brand: {
-        marginLeft: 2,
+      marginHorizontal:3,
         width: 100,
         height: 100,
         borderRadius: 50,
         justifyContent: 'space-between'
     },
-    discretion_brand: {
-        marginHorizontal: 10,
-        flex: 1,
-
-    },
+   
     discretion_detail: {
-        marginHorizontal: 2,
+      
         flex: 1,
         marginVertical: 10,
     },
@@ -221,7 +237,7 @@ export const globalStyles = StyleSheet.create({
     buttom_subscribe: {
         width: 110,
         height: 30,
-        marginTop: 35,
+        marginTop: 50,
         paddingVertical: 5,
         borderColor: 'white',
         borderRadius: 5,
@@ -241,6 +257,7 @@ export const globalStyles = StyleSheet.create({
         marginTop: 15,
 
     },
+ 
     //Feed Page
     container_feed: {
         flex: 1,
@@ -265,18 +282,21 @@ export const globalStyles = StyleSheet.create({
 
     },
     container_image_story: {
-        height: 190,
-        width: 160,
+        flex: 1,
+        height: 140,
+        width: 110,
         borderRadius: 2,
-        marginHorizontal: 1,
+       
+        marginEnd:3,
         paddingTop: 4,
         borderWidth: 0.5,
         borderColor: '#50596D',
+        
     },
 
     image_story: {
-        height: 150,
-        width: 150,
+        height: 130,
+        width: 98,
         alignItems: 'center',
         // backgroundColor: 'blue',
         borderRadius: 2,
@@ -486,23 +506,19 @@ export const globalStyles = StyleSheet.create({
 
     //Title Page
     container_title: {
-        flex: 1,
+        flex: 0.5,
         flexDirection: 'row',
 
         // marginVertical: 30,
         // marginHorizontal: 5,
-        justifyContent: 'center',
 
     },
     imageTitle: {
-        width: 200,
-        height: 200,
+        width:170,
+        height: 170,
         flex: 1
     },
-    imagestar_title: {
-        width: 20,
-        height: 20,
-    },
+  
     contents_title: {
         color: '#EFEFEF',
         marginHorizontal: 5,
@@ -512,3 +528,6 @@ export const globalStyles = StyleSheet.create({
 
 
 })
+
+
+ 

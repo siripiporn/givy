@@ -11,7 +11,7 @@ export default function Story ({ navigation }) {
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}>
                  
-                <View style={{marginLeft:16,}}>
+                <View style={{marginLeft:16, }}>
                     <TouchableOpacity onPress ={() =>  navigation.navigate('ChallengesScreen')}  style={globalStyles.container_image_story}>
                    <Image style={globalStyles.image_story}  source={require("../images/story/promotion.png")}  /> 
                     </TouchableOpacity>
@@ -26,6 +26,12 @@ export default function Story ({ navigation }) {
                 <View >
                     <TouchableOpacity style={globalStyles.container_image_story}>
                         <Image style={globalStyles.image_story} source={require("../images/story/storyimage2.png")}  />
+                    </TouchableOpacity>
+                    <View style={globalStyles.content_story}><Text style={globalStyles.content_story}>Testimonials</Text></View>
+                </View>
+                <View >
+                    <TouchableOpacity style={globalStyles.container_image_story}>
+                        <Image style={globalStyles.image_story} source={require("../images/story/storyimage1.png")}  />
                     </TouchableOpacity>
                     <View style={globalStyles.content_story}><Text style={globalStyles.content_story}>Testimonials</Text></View>
                 </View>

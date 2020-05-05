@@ -5,7 +5,7 @@ import HeartBlack from '../images/icons/heartBlack.svg'
 import Coins from '../images/icons/coins.svg'
 import RadioForm from 'react-native-simple-radio-button';
 import CartProductScreen from '../rewards/cartProductScreen';
- 
+
 
 
 
@@ -56,35 +56,44 @@ export default function DetailProductScreen({ navigation }) {
                                 <Text style={styles.textDetail_small}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </Text>
                             </View>
                             <View style={styles.borderBox}></View>
-                            <View style={styles.container_boxText}>
-                                <Text style={styles.textBuy_big}>Size
+
+                            <View style={styles.container_box}>
+                                <View style={styles.container_boxText}>
+                                    <Text style={styles.textBuy_big}>Size
                                <Text style={styles.textBuy_small}> (Pick 1)
                                </Text>
-                                </Text>
+                                    </Text>
+                                </View>
                             </View>
 
-                            <View style={styles.container_radioBox}>
-                                <View style={styles.radio}>
-                                    <RadioForm
-                                        radio_props={size}
-                                        initial={0}
-                                        //   onPress={(value) => {ToastAndroid.show(value.toString(), ToastAndroid.SHORT)}}
-                                        onPress={(value) => { }}
-                                        buttonSize={10}
-                                        buttonOuterSize={20}
-                                        selectedButtonColor={'white'}
-                                        selectedLabelColor={'white'}
-                                        labelStyle={{ fontSize: 16, color: 'white', marginBottom: 6 }}
-                                        disabled={false}
-                                        formHorizontal={false}
-                                        buttonColor={'white'}
-                                        value={setCount}
-                                    />
+                            <View style={styles.container_box}>
+                                <View style={styles.container_radioBox}>
+
+                                    <View style={styles.radio}>
+                                        <RadioForm
+                                            radio_props={size}
+                                            initial={0}
+                                            //   onPress={(value) => {ToastAndroid.show(value.toString(), ToastAndroid.SHORT)}}
+                                            onPress={(value) => { }}
+                                            buttonSize={10}
+                                            buttonOuterSize={20}
+                                            selectedButtonColor={'white'}
+                                            selectedLabelColor={'white'}
+                                            labelStyle={{ fontSize: 16, color: 'white', marginBottom: 6 }}
+                                            disabled={false}
+                                            formHorizontal={false}
+                                            buttonColor={'white'}
+                                            value={setCount}
+                                        />
+                                    </View>
                                 </View>
-                                <Text style={styles.content_coin}>+</Text>
-                                <Coins />
-                                <Text style={styles.content_coin}>10</Text>
+                                <View style={{ flex: 0.3, flexDirection: 'row', marginLeft: 16, }}>
+                                    <Text style={styles.content_coin}>+</Text>
+                                    <Coins />
+                                    <Text style={styles.content_coin}>10</Text>
+                                </View>
                             </View>
+
                             <View style={styles.borderBox}></View>
                             <View>
                                 <Text style={styles.text_addNote}>Add Note</Text>
@@ -118,7 +127,7 @@ export default function DetailProductScreen({ navigation }) {
 
 
                                             </View>
-                                            
+
                                             <View style={globalStyles.imageContainer_store}>
                                                 <Image style={globalStyles.image_store} source={require("../images/products/product2.png")} />
 
@@ -165,32 +174,35 @@ export default function DetailProductScreen({ navigation }) {
 
                     </ScrollView>
                 </SafeAreaView>
-           
+
             </View>
+
             <View style={{ backgroundColor: '#21242E', height: 60, }}>
                 <View style={{ flexDirection: 'row', flex: 1, alignItems: 'center', }}>
 
+                    <View style={styles.container_box}>
+                        <TouchableOpacity style={{ width: 30, marginHorizontal: 16, }} onPress={decrement}>
+                            <Text style={{ color: 'white', fontSize: 20 }}> - </Text>
+                        </TouchableOpacity>
+                        <Text style={{ color: 'white', width: 50, }}>  {count !== 0 ? count : null}</Text>
+                        <TouchableOpacity style={{ width: 50 }} onPress={increment}>
+                            <Text style={{ color: 'white', fontSize: 16, }}> + </Text>
+                        </TouchableOpacity>
+                    </View>
 
-                    <TouchableOpacity style={{ width: 50, marginHorizontal: 16, }} onPress={decrement}>
-                        <Text style={{ color: 'white', fontSize: 20 }}> - </Text>
-                    </TouchableOpacity>
-                    <Text style={{ color: 'white', width: 70 }}>  {count !== 0 ? count : null}</Text>
-                    <TouchableOpacity style={{ width: 70 }} onPress={increment}>
-                        <Text style={{ color: 'white', fontSize: 16, }}> + </Text>
-                    </TouchableOpacity>
+                    <View style={styles.container_box}>
+                        <TouchableOpacity onPress={() => navigation.navigate('CartProductScreen')} style={{ backgroundColor: '#18E39C', marginRight: 16, height: 50, alignItems: 'center', flexDirection: 'row', flex: 1, borderRadius: 3, }}>
 
+                            <Text style={{ fontSize: 18, fontFamily: 'gelion-bold', color: 'white', marginLeft: 10, }}>Buy</Text>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('CartProductScreen')} style={{ backgroundColor: '#18E39C', marginRight: 12, height: 50, alignItems: 'center', flexDirection: 'row', flex: 1, borderRadius: 3, }}>
-                        <Text style={{ fontSize: 18, fontFamily: 'gelion-bold', color: 'white', marginLeft: 15, }}>Buy</Text>
-                        
-                            <View style={{ flex: 1, flexDirection: 'row', marginLeft: 68, }}>
+                            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginRight: 10 }}>
                                 <Text style={{ height: 50, marginTop: 30, color: 'white', fontSize: 18, fontFamily: 'gelion-bold', }}> 80 </Text>
                                 <View style={{ height: 50, marginTop: 33, }} ><Coins /></View>
                             </View>
-                       
-                 </TouchableOpacity> 
 
+                        </TouchableOpacity>
 
+                    </View>
                 </View>
 
             </View>
@@ -218,6 +230,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 16,
         marginTop: 5,
     },
+    container_box: {
+        flex: 1, flexDirection: 'row'
+    },
+
     text_addNote: {
         color: 'white',
         marginHorizontal: 16,

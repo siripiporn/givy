@@ -1,5 +1,5 @@
 import React  from 'react';
-import { View, Image, Text, TouchableOpacity, Linking,Button } from 'react-native';
+import { View, Image, Text, TouchableOpacity, Linking,  } from 'react-native';
 import { globalStyles } from '../styles/styleGlobal';
  
 
@@ -10,13 +10,16 @@ export default function AboutBrand ({ navigation }) {
                  
                 <View style={globalStyles.container_brand}>
                      <View style={{flex: 1,flexDirection:'row', justifyContent:'space-between'}}>
-                     <Image style={globalStyles.logo_brand} source={require("../images/logo/logo.png")} />
+                     <View style={globalStyles.circle} >
+                            <Image style={globalStyles.circle_small} source={require("../images/logo/getfresh.png")} />
+                        </View>
+                     {/* <Image style={globalStyles.logo_brand} source={require("../images/logo/logo.png")} /> */}
                      <View>
                             <TouchableOpacity style={globalStyles.buttom_subscribe}><Text style={globalStyles.text_subscribe}>FOLLOW</Text></TouchableOpacity>
                         </View>
                      </View>
                 </View>
-                <View style={globalStyles.discretion_brand}>
+                <View>
                         <Text style={globalStyles.contents_name_brand}>Getfresh</Text>
                         <Text style={globalStyles.contents_category}>Healthy Food</Text>
                        

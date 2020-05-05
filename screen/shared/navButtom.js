@@ -12,7 +12,7 @@ export default function NavButtom({ navigation }) {
         <View style={globalStyles.container_nav}>
             <TouchableOpacity style={globalStyles.order_buttom_nav}>
                 <Text style={globalStyles.buttom_content}>Order</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> 
             <TouchableOpacity style={globalStyles.call_nav}>
                 <Text style={globalStyles.callcontents_nav}><Call /></Text>
             </TouchableOpacity>

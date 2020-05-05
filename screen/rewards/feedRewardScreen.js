@@ -4,7 +4,8 @@ import { globalStyles } from '../styles/styleGlobal';
 import Shocked from '../images/icons/shocked.svg';
 import TermIcon from '../images/icons/termIcon.svg'
 import Heart from '../images/icons/favorite_heart.svg';
-import ChallengesScreen from '../challenges/challengesScreen';
+import Coins from '../images/icons/coins.svg'
+
 
 
 const listItems = [
@@ -173,8 +174,7 @@ export default class FeedRewardScreen extends Component {
                     <View style={globalStyles.content_detail_store}>
                         <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
                         <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
-                        <View style={globalStyles.container_detail_store}>
-                            <Text style={globalStyles.content_price_store}>$100</Text>
+                        <View style={globalStyles.container_detail_store}><Coins />
                             <Text style={globalStyles.content_sale_store}>$50</Text>
                             <Text style={globalStyles.content_heart_store}><Heart /></Text>
                         </View>
@@ -193,7 +193,7 @@ export default class FeedRewardScreen extends Component {
                         <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
                         <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
                         <View style={globalStyles.container_detail_store}>
-                            <Text style={globalStyles.content_price_store}>$100</Text>
+                        <Coins />
                             <Text style={globalStyles.content_sale_store}>$50</Text>
                             <Text style={globalStyles.content_heart_store}><Heart /></Text>
                         </View>
@@ -211,7 +211,7 @@ export default class FeedRewardScreen extends Component {
                         <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
                         <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
                         <View style={globalStyles.container_detail_store}>
-                            <Text style={globalStyles.content_price_store}>$100</Text>
+                        <Coins />
                             <Text style={globalStyles.content_sale_store}>$50</Text>
                             <Text style={globalStyles.content_heart_store}><Heart /></Text>
                         </View>
@@ -236,7 +236,7 @@ export default class FeedRewardScreen extends Component {
                         <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
                         <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
                         <View style={globalStyles.container_detail_store}>
-                            <Text style={globalStyles.content_price_store}>$100</Text>
+                        <Coins />
                             <Text style={globalStyles.content_sale_store}>$50</Text>
                             <Text style={globalStyles.content_heart_store}><Heart /></Text>
                         </View>
@@ -254,7 +254,7 @@ export default class FeedRewardScreen extends Component {
                         <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
                         <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
                         <View style={globalStyles.container_detail_store}>
-                            <Text style={globalStyles.content_price_store}>$100</Text>
+                        <Coins />
                             <Text style={globalStyles.content_sale_store}>$50</Text>
                             <Text style={globalStyles.content_heart_store}><Heart /></Text>
                         </View>
@@ -273,7 +273,8 @@ export default class FeedRewardScreen extends Component {
                         <Text style={globalStyles.texts_header_store}>Ice Cappucino</Text>
                         <Text style={globalStyles.texts_des_store}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
                         <View style={globalStyles.container_detail_store}>
-                            <Text style={globalStyles.content_price_store}>$100</Text>
+                            <Coins />
+                            
                             <Text style={globalStyles.content_sale_store}>$50</Text>
                             <Text style={globalStyles.content_heart_store}><Heart /></Text>
                         </View>

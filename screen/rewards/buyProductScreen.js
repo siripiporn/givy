@@ -87,7 +87,7 @@ export default function BuyProductScreen({ navigation }) {
                             </View>
                             <Text style={styles.content_checkOut} > Check out</Text>
                             <View style={styles.box_coins}>
-                                <Coins />
+                                <Coins style={{marginTop:3}} />
                                 <Text style={styles.content_coins}>80</Text>
                             </View>
                         </View>
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row', justifyContent: 'flex-end', marginTop: 28
     },
     content_coins: {
-        color: 'white', marginLeft: 5, marginRight: 10, fontSize: 18, fontFamily: 'gelion-bold', 
+        color: 'white', marginLeft: 5, marginRight: 10, fontSize: 18, fontFamily: 'gelion-bold',
     },
     box_inputs: {
         height: 50, marginHorizontal: 16, width: 380, backgroundColor: '#303540', color: 'white', textAlign: 'center', marginTop: 5,

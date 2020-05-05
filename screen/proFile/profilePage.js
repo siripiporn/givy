@@ -36,12 +36,12 @@ export default class ProfilePage extends React.Component {
                         <View style={styles.header_icon} ><Bell /></View>
                     </View>
 
-                    <View style={{ flex: 3, flexDirection: 'row', }}>
+                    <View style={{ flex: 3, flexDirection: 'row', marginTop:20 }}>
                         <View style={styles.circle} >
                             <Image style={styles.circle_small} source={require("../images/Profile/man.jpg")} />
                         </View>
 
-                        <View style={{ marginHorizontal: 20, flex: 3, flexDirection: 'row', }}>
+                        <View style={{ marginHorizontal: 16, flex: 3, flexDirection: 'row',}}>
                             <View style={{ flex: 1, flexDirection: 'column' }}>
                                 <Text style={styles.h1}>Jam Kraprayoon</Text>
                                 <Text style={styles.green_text}>ID : 0293032-20</Text>
@@ -144,15 +144,15 @@ const styles = StyleSheet.create({
         fontFamily: 'gelion-bold',
     },
     circle: {
-        width: 130,
-        height: 130,
+        width: 90,
+        height: 90,
         borderRadius: 100 / 1,
         backgroundColor: '#18E39C',
 
     },
     circle_small: {
-        width: 120,
-        height: 120,
+        width: 80,
+        height: 80,
         borderRadius: 100 / 1,
         backgroundColor: 'pink',
         alignSelf: 'center',

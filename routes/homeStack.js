@@ -22,7 +22,7 @@ import PointComponent from '../screen/shared/point';
 import NavButtom from '../screen/shared/navButtom';
 import AboutBrand from '../screen/shared/aboutBrand';
 import SearchBox from '../screen/shared/searchBox';
-
+import SearchHome from '../screen/shared/searchHome';
 
 import Story from '../screen/shared/story';
 import NavMenuPage from '../screen/navMenu/navMenuPage';
@@ -36,6 +36,9 @@ import ChallengesScreen from '../screen/challenges/challengesScreen';
 import  ItemsPage from '../screen/proFile/itemsPage'
 import ActivityPage from '../screen/proFile/activityPage';
 import ChallengePage from '../screen/proFile/challengePage';
+
+// commentsPage
+import CommentPage from '../screen/comments/commentPage'
  
 
 const Stack = createStackNavigator()
@@ -180,7 +183,9 @@ export default Navigator = () => {
       <Stack.Screen name='DetailExplore' component={DetailExplore} options={{ title: 'DetailExplore' }} />
       <Stack.Screen name='WalletPage' component={WalletPage} options={{ title: 'WalletPage' }} />
       <Stack.Screen name='ChatPage' component={ChatPage} options={{ title: 'ChatPage' }} />
-    
+      <Stack.Screen name='SearchHome' component={SearchHome} options={{ title: 'SearchHome' }} />
+      
+
      {/* Profile Screen */}
       <Stack.Screen name='ProfilePage' component={ProfilePage} navigationOptions = {{ title: 'Home' , headerStyle: {height: 70,backgroundColor: '#252A37',  },}}/>
       <Stack.Screen name='ItemsPage' component={ItemsPage} options={{title: 'name', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
@@ -202,14 +207,15 @@ export default Navigator = () => {
 
       {/* Order */}
       <Stack.Screen name='FeedOrderScreen' component={FeedOrderScreen} options={{ title: 'FeedOrderScreen' }} />
-      <Stack.Screen name='DetailOrder' component={DetailOrder}  options={{title: ' Store', justifycontent: 'center' , headerStyle: {height: 70,backgroundColor: '#252A37', },headerTintColor: '#fff',}} />
-      <Stack.Screen name='ConfirmationProduct' component={ConfirmationProduct}  options={{title: 'Purchase Confirmation', justifycontent: 'center' , headerStyle: {height: 70,backgroundColor: '#252A37', },headerTintColor: '#fff',}} />
+      <Stack.Screen name='DetailOrder' component={DetailOrder}  options={{title: ' Store', headerTitleAlign: 'center'  , headerStyle: {height: 70,backgroundColor: '#252A37', },headerTintColor: '#fff',}} />
+      <Stack.Screen name='ConfirmationProduct' component={ConfirmationProduct}  options={{title: 'Purchase Confirmation', headerTitleAlign: 'center' , headerStyle: {height: 70,backgroundColor: '#252A37', },headerTintColor: '#fff',}} />
        
       {/* ChallengesScreen */}
-      <Stack.Screen name='ChallengesScreen' component={ChallengesScreen}  options={{title: 'ChallengesScreen', justifycontent: 'center' , headerStyle: {height: 70,backgroundColor: '#252A37', },headerTintColor: '#fff',}} />
+      <Stack.Screen name='ChallengesScreen' component={ChallengesScreen}  options={{title: 'ChallengesScreen', headerTitleAlign: 'center' , headerStyle: {height: 70,backgroundColor: '#252A37', },headerTintColor: '#fff',}} />
        
-   
-       
+      {/* CommentPage */}
+      <Stack.Screen name='CommentPage' component={CommentPage}  options={{title: 'Comments', headerTitleAlign: 'center' , headerStyle: {height: 70,backgroundColor: '#252A37', },headerTintColor: '#fff',}} />
+    
     </Stack.Navigator>
   )
 }

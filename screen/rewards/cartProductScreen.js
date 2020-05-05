@@ -7,7 +7,7 @@ import HomeScreen from '../homeScreen';
 
 
 export default function CartProductScreen({ navigation }) {
- 
+
     return (
         <SafeAreaView>
             <ScrollView>
@@ -27,17 +27,20 @@ export default function CartProductScreen({ navigation }) {
                         <Text style={styles.contentSize}>Small</Text>
 
                     </View>
+
                     <View style={{ marginHorizontal: 16, marginTop: 30, height: 100 }}>
-                        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }} >
-                            <View style={{ width: 175, }}>
-                                <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={{ backgroundColor: '#E77369', borderRadius: 3, height: 50, }}>
+
+                        <View style={{ flex: 1, flexDirection: 'row', }} >
+
+                            <View style={{ flex: 1, flexDirection: 'column', }}>
+                                <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={{ backgroundColor: '#E77369', borderRadius: 3, height: 50, marginRight: 3 }}>
                                     <Text style={{ color: 'white', fontSize: 18, fontFamily: 'gelion-bold', textAlign: 'center', marginTop: 13 }} >Cancel</Text>
                                 </TouchableOpacity>
                             </View>
 
-                            <View style={{ width: 175, }}> 
+                            <View style={{ flex: 1, flexDirection: 'column', }}>
 
-                                <TouchableOpacity onPress ={() => navigation.navigate('BuyProductScreen')} style={{ backgroundColor: '#18E39C', borderRadius: 3, height: 50, }}>
+                                <TouchableOpacity onPress={() => navigation.navigate('BuyProductScreen')} style={{ backgroundColor: '#18E39C', borderRadius: 3, height: 50, }}>
 
                                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginTop: 15 }}>
                                         <Text style={{ color: 'white', fontSize: 18, fontFamily: 'gelion-bold', marginLeft: 15 }}>Buy
@@ -75,6 +78,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'stretch',
 
+    },
+    container_box: {
+        flex: 1, flexDirection: 'row'
     },
     Image: {
         width: 410,
