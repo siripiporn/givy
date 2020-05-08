@@ -12,7 +12,7 @@ import {   StyleSheet,
 import { globalStyles } from '../styles/styleGlobal';
 import RegisterScreen from './RegisterScreen'
 import HomeScreen from '../homeScreen'
-
+import axios from 'axios';
 
 class LoginScreen extends React.Component {
 
@@ -34,17 +34,42 @@ class LoginScreen extends React.Component {
         let regUsername = await AsyncStorage.getItem('username')
         let regPassword = await AsyncStorage.getItem('password')
 
-        if (regUsername == null || regPassword == null) {
+        if (this.state.username == '' || this.state.password == '') {
             Alert.alert("Invalid Account")
             return
         }
 
-        if (regUsername == username && regPassword == password) {
-            Alert.alert("Login Successful")
-            this.props.navigation.navigate("HomeScreen")
-        } else {
-            Alert.alert("Invalid Account")
-        }
+        const data = {
+            username: username,
+            password: password
+        };
+
+        //Connect POST/login
+        axios.post('http://192.168.0.30:9000/api/v1.0.0/login',data)
+        .then( async(responese) => {
+            let account = responese.data.data[0]; 
+            if(account.AccountId != 0){
+                //Save Account Storage2
+                await AsyncStorage.setItem('AccountId', account.AccountId)
+                await AsyncStorage.setItem('AccountName', account.AccountName)
+                await AsyncStorage.setItem('Token', account.JWT)
+
+                this.props.navigation.navigate("HomeScreen")
+                console.log("Account->Access=>Token=",  account.JWT);
+            }else{
+                Alert.alert("Invalid Account, Please Try Again.")
+            }
+            console.log(account);
+        }).catch((error) => {
+            console.error(error);
+        });
+
+        // if (regUsername == username && regPassword == password) {
+        //     Alert.alert("Login Successful")
+        //     // this.props.navigation.navigate("HomeScreen")
+        // } else {
+        //     Alert.alert("Invalid Account")
+        // }
     }
 
     onRegisterPressed() {
