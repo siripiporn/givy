@@ -23,7 +23,7 @@ class LoginScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: "",
+            email: "",
             password: ""
         }
     }
@@ -87,7 +87,7 @@ class LoginScreen extends React.Component {
 
                     <TextInput
                         onChangeText={(text) => this.setState({ username: text })}
-                        keyboardType={'email-address'}
+                        keyboardType={'ascii-capable'}
                         autoCapitalize={'none'}
                         autoCorrect={false}
                         style={styles.input}
