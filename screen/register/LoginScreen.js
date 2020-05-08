@@ -158,12 +158,12 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     input: {
-        height: 65,
+        height: 50,
         width: '100%',
         marginTop: 10,
         padding: 4,
         borderRadius: 5,
-        fontSize: 18,
+        fontSize: 16,
         borderWidth: 1,
         borderColor: '#48bbec33',
         color: 'white'
