@@ -26,8 +26,10 @@ class RegisterScreen extends Component {
         this.state = {
             fullname: "",
             username: "",
-            password: "",
-            repassword: "",
+            password:  [],
+            repassword:  [],
+            phonenumber: [],
+            email:"",
 
         }
     }
@@ -35,12 +37,13 @@ class RegisterScreen extends Component {
 
     async onRegisterPressed() {
         try {
-            const { username, password, fullname } = this.state
+            const { username, password,repassword, fullname, phonenumber,email } = this.state
             await AsyncStorage.setItem('username', username)
             await AsyncStorage.setItem('password', password)
             await AsyncStorage.setItem('fullname', fullname)
             await AsyncStorage.setItem('repassword', repassword)
             await AsyncStorage.setItem('phonenumber', phonenumber)
+            await AsyncStorage.setItem('email', email)
 
         } catch (error) {
 
@@ -75,6 +78,13 @@ class RegisterScreen extends Component {
                         </TextInput>
                         <TextInput
                             onChangeText={(text) => this.setState({ username: text })}
+                            keyboardType={'ascii-capable'}
+                            autoCapitalize={'none'}
+                            autoCorrect={false}
+                            style={styles.input} placeholder="User Name">
+                        </TextInput>
+                        <TextInput
+                            onChangeText={(text) => this.setState({ email: text })}
                             keyboardType={'email-address'}
                             autoCapitalize={'none'}
                             autoCorrect={false}
@@ -94,11 +104,10 @@ class RegisterScreen extends Component {
                             autoCorrect={false}
                             secureTextEntry={true}>
                         </TextInput>
-
+ 
                         <View style={{ flexDirection: 'row', flex: 1, marginTop: 5, alignItems: 'center' }}>
                             <CheckBox
                                 center
-
                                 checkedIcon='dot-circle-o'
                                 uncheckedIcon='circle-o'
                                 uncheckedColor='#fff'
@@ -108,12 +117,12 @@ class RegisterScreen extends Component {
                             />
                             <Text style={globalStyles.h6}>Agree to Terms and Conditions</Text>
                         </View>
-
+                       
                         <TouchableHighlight onPress={this.onRegisterPressed.bind(this)}
                             style={styles.registerButton}>
                             <Text style={styles.registerButtonText}>
                                 Sign Up
-              </Text>
+                            </Text>
                         </TouchableHighlight>
 
                         <Text style={styles.error}>
