@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {
     StyleSheet,
     Alert,
@@ -9,64 +9,120 @@ import {
     AsyncStorage,
     Text,
     View,
-    ScrollView
+    ScrollView,
+    SafeAreaView,
+    Image
+
 } from 'react-native';
 
+import { CheckBox } from 'react-native-elements'
 import LoginScreen from './LoginScreen'
+import { globalStyles } from '../styles/styleGlobal';
 
 class RegisterScreen extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
+            fullname: "",
             username: "",
-            password: ""
+            password: "",
+            repassword: "",
+
         }
     }
 
-    async onRegisterPressed(){
-        try{
-            const {username, password} = this.state
+
+    async onRegisterPressed() {
+        try {
+            const { username, password, fullname } = this.state
             await AsyncStorage.setItem('username', username)
             await AsyncStorage.setItem('password', password)
-        }catch(error){
+            await AsyncStorage.setItem('fullname', fullname)
+            await AsyncStorage.setItem('repassword', repassword)
+            await AsyncStorage.setItem('phonenumber', phonenumber)
+
+        } catch (error) {
 
         }
 
         this.props.navigation.navigate('LoginScreen')
     }
 
-    
     render() {
 
         return (
             <View style={styles.container}>
-               <ScrollView style={styles.scrollView} > 
-                <TextInput
-                    onChangeText={(text) => this.setState({ username: text })}
-                    keyboardType={'email-address'}
-                    autoCapitalize={'none'}
-                    autoCorrect={false}
-                    style={styles.input} placeholder="Email">
-                </TextInput>
-                <TextInput
-                    onChangeText={(text) => this.setState({ password: text })}
-                    style={styles.input}
-                    placeholder="Password"
-                    autoCorrect={false}
-                    secureTextEntry={true}>
-                </TextInput>
-                <TouchableHighlight onPress={this.onRegisterPressed.bind(this)} 
-                style={styles.registerButton}>
-                    <Text style={styles.registerButtonText}>
-                        Register
+
+                <SafeAreaView style={styles.scrollView}>
+                    <ScrollView>
+                        <View style={{ marginTop: 30 }}>
+                            <Text style={globalStyles.greenFont}>REGISTER</Text>
+                        </View>
+                        <TextInput
+                            onChangeText={(text) => this.setState({ fullname: text })}
+                            keyboardType={'ascii-capable'}
+                            autoCapitalize={'none'}
+                            autoCorrect={false}
+                            style={styles.input} placeholder="Full Name">
+                        </TextInput>
+                        <TextInput
+                            onChangeText={(Number) => this.setState({ phonenumber: Number })}
+                            keyboardType={'numeric'}
+                            autoCapitalize={'none'}
+                            autoCorrect={false}
+                            style={styles.input} placeholder="Phone">
+                        </TextInput>
+                        <TextInput
+                            onChangeText={(text) => this.setState({ username: text })}
+                            keyboardType={'email-address'}
+                            autoCapitalize={'none'}
+                            autoCorrect={false}
+                            style={styles.input} placeholder="Email">
+                        </TextInput>
+                        <TextInput
+                            onChangeText={(text) => this.setState({ password: text })}
+                            style={styles.input}
+                            placeholder="Password"
+                            autoCorrect={false}
+                            secureTextEntry={true}>
+                        </TextInput>
+                        <TextInput
+                            onChangeText={(text) => this.setState({ repassword: text })}
+                            style={styles.input}
+                            placeholder="Re-Enter Password"
+                            autoCorrect={false}
+                            secureTextEntry={true}>
+                        </TextInput>
+
+                        <View style={{ flexDirection: 'row', flex: 1, marginTop: 5, alignItems: 'center' }}>
+                            <CheckBox
+                                center
+
+                                checkedIcon='dot-circle-o'
+                                uncheckedIcon='circle-o'
+                                uncheckedColor='#fff'
+                                checkedColor='#fff'
+                                checked={this.state.checked}
+                                onPress={() => this.setState({ checked: !this.state.checked })}
+                            />
+                            <Text style={globalStyles.h6}>Agree to Terms and Conditions</Text>
+                        </View>
+
+                        <TouchableHighlight onPress={this.onRegisterPressed.bind(this)}
+                            style={styles.registerButton}>
+                            <Text style={styles.registerButtonText}>
+                                Sign Up
               </Text>
-                </TouchableHighlight>
-                <Text style={styles.error}>
-                    {this.state.error}
-                </Text>
-                </ScrollView>
+                        </TouchableHighlight>
+
+                        <Text style={styles.error}>
+                            {this.state.error}
+                        </Text>
+                    </ScrollView>
+                </SafeAreaView>
             </View>
+
         );
     }
 }
@@ -76,6 +132,11 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         backgroundColor: '#252A37',
+
+    },
+    checkbox: {
+        alignSelf: "center",
+        color: 'white',
 
     },
     scrollView: {
@@ -90,13 +151,14 @@ const styles = StyleSheet.create({
         marginTop: 10,
         padding: 4,
         borderRadius: 5,
-        fontSize: 18,
+        fontSize: 16,
         borderWidth: 1,
-        borderColor: '#48bbec33'
+        borderColor: '#303540',
+        color: 'white'
     },
     registerButton: {
         height: 50,
-        backgroundColor: '#EB6663',
+        backgroundColor: '#18E39C',
         alignSelf: 'stretch',
         marginTop: 40,
         borderRadius: 10,
@@ -108,10 +170,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
 
-    heading: {
-        fontSize: 30,
-        marginBottom: 40
-    },
+
     error: {
         color: 'red',
         paddingTop: 10
