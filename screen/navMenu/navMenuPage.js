@@ -23,7 +23,7 @@ export default class NavMenuPage extends React.Component {
     //handle tab selection for custom Tab Selection SegmentedControlTab
     this.setState(prevState => ({ ...prevState, customStyleIndex: index }));
   };
-
+ 
 
   render() {
     // const { navigate } = this.props.navigation;

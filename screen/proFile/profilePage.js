@@ -75,7 +75,7 @@ export default class ProfilePage extends React.Component {
                     {customStyleIndex === 0 && (
                         <View style={styles.container_feed}>
 
-                            <ActivityPage />
+                            <ActivityPage navigation={this.props.navigation} />
 
                             {/* <Button title="PointComponent" onPress={() => this.props.navigation.navigate('PointComponent')}/>   */}
                         </View>
@@ -83,13 +83,13 @@ export default class ProfilePage extends React.Component {
                     {customStyleIndex === 1 && (
                         <View style={styles.container_feed}>
 
-                            <ItemsPage />
+                            <ItemsPage  navigation={this.props.navigation} />
                         </View>
                     )}
                     {customStyleIndex === 2 && (
                         <View style={styles.container_feed}>
 
-                            <ChallengePage />
+                            <ChallengePage navigation={this.props.navigation} />
                         </View>
                     )}
                 </View>

@@ -23,6 +23,7 @@ import NavButtom from '../screen/shared/navButtom';
 import AboutBrand from '../screen/shared/aboutBrand';
 import SearchBox from '../screen/shared/searchBox';
 import SearchHome from '../screen/shared/searchHome';
+import SearchProfile from '../screen/shared/searchProfile'
 
 import Story from '../screen/shared/story';
 import NavMenuPage from '../screen/navMenu/navMenuPage';
@@ -36,10 +37,19 @@ import ChallengesScreen from '../screen/challenges/challengesScreen';
 import  ItemsPage from '../screen/proFile/itemsPage'
 import ActivityPage from '../screen/proFile/activityPage';
 import ChallengePage from '../screen/proFile/challengePage';
+import GiftDetailPage from '../screen/proFile/giftDetailPage';
+import SelectFriendPage from '../screen/proFile/selectFriend'
+import ConfirmationPage from '../screen/proFile/ConfirmationPage'
 
 // commentsPage
 import CommentPage from '../screen/comments/commentPage'
  
+ 
+//RegisterPage
+
+import LoginScreen from '../screen/register/LoginScreen'
+import RegisterScreen from '../screen/register/RegisterScreen'
+
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator();
@@ -161,8 +171,14 @@ const TabOnbuttom = () => {
 export default Navigator = () => {
   return (
 
-    <Stack.Navigator initialRouteName="HomeScreen"
+    <Stack.Navigator initialRouteName="LoginScreen"
       screenOptions={{ gestureEnabled: false }}>
+
+    {/* RegisterPage */}
+    <Stack.Screen name='LoginScreen' component={LoginScreen} options={{title: ' ', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 30,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
+    <Stack.Screen name='RegisterScreen' component={RegisterScreen} options={{title: ' ', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
+      
+
 
       {/* Rewards Screen */}
        
@@ -191,7 +207,11 @@ export default Navigator = () => {
       <Stack.Screen name='ItemsPage' component={ItemsPage} options={{title: 'name', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
       <Stack.Screen name='ActivityPage' component={ActivityPage} options={{title: 'ActivityPage', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
       <Stack.Screen name='ChallengePage' component={ChallengePage} options={{title: 'ChallengePage', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
-
+      <Stack.Screen name='GiftDetailPage' component={GiftDetailPage} options={{title: 'Gift Detail', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
+      <Stack.Screen name='SelectFriendPage' component={SelectFriendPage} options={{title: 'Select a Friend', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
+      <Stack.Screen name='ConfirmationPage' component={ConfirmationPage} options={{title: 'Confirmation', justifycontent: 'center',  headerTitleAlign: 'center' ,   headerStyle: {height: 70,backgroundColor: '#252A37',  },headerTintColor: '#fff'  }} />
+       
+       
       {/* Shared Component*/}
       <Stack.Screen name='Title' component={Title} options={{ title: 'Title' }} />
       <Stack.Screen name='PointComponent' component={PointComponent} options={{ title: 'PointComponent' }} />
@@ -200,10 +220,10 @@ export default Navigator = () => {
       <Stack.Screen name='AboutBrand' component={AboutBrand} options={{ title: 'AboutBrand' }} />
       <Stack.Screen name='SearchBox' component={SearchBox} options={{ title: 'SearchBox' }} />
       <Stack.Screen name='Story' component={Story} options={{ title: 'Story' }} />
-
+      <Stack.Screen name='SearchProfile' component={SearchProfile} />
+       
       {/* NavMenu */}
       <Stack.Screen name='NavMenuPage' component={NavMenuPage} options={{ title: 'NavMenuPage' }} />
-
 
       {/* Order */}
       <Stack.Screen name='FeedOrderScreen' component={FeedOrderScreen} options={{ title: 'FeedOrderScreen' }} />
@@ -216,6 +236,8 @@ export default Navigator = () => {
       {/* CommentPage */}
       <Stack.Screen name='CommentPage' component={CommentPage}  options={{title: 'Comments', headerTitleAlign: 'center' , headerStyle: {height: 70,backgroundColor: '#252A37', },headerTintColor: '#fff',}} />
     
+   
+
     </Stack.Navigator>
   )
 }

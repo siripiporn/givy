@@ -11,7 +11,9 @@ const getFonts = () => Font.loadAsync({
   'gelion-bold': require('./assets/fonts/Gelion-Bold.ttf'),
   'gelion-medium': require('./assets/fonts/Gelion-Medium.ttf'),
   'gelion-regular': require('./assets/fonts/Gelion-Regular.ttf'),
-  'Arialic': require('./assets/fonts/Arialic-Hollow.ttf')
+  'Arialic': require('./assets/fonts/Arialic-Hollow.ttf'),
+  'gelion-Black': require('./assets/fonts/Gelion-Black.ttf'),
+  
 });
 
 export default function App() {

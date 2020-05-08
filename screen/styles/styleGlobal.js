@@ -47,20 +47,20 @@ export const globalStyles = StyleSheet.create({
 
         flex: 1,
         flexDirection: 'row',
-      
+
 
 
     },
     order_buttom_nav: {
-         
+
         borderColor: '#50596D',
         backgroundColor: '#18E39C',
         borderRadius: 5,
         borderWidth: 1.5,
         paddingVertical: 5,
-        marginTop:5,
-        flex:2,
-        height:40
+        marginTop: 5,
+        flex: 2,
+        height: 40
 
 
     },
@@ -75,7 +75,7 @@ export const globalStyles = StyleSheet.create({
         marginHorizontal: 20,
     },
     iconsee_nav: {
-       
+
         marginHorizontal: 8,
         paddingVertical: 10,
         borderColor: '#50596D',
@@ -83,14 +83,14 @@ export const globalStyles = StyleSheet.create({
         borderWidth: 1.5,
         justifyContent: 'center',
         paddingVertical: 5,
-        marginTop:5,
-        flex:1,
-        height:40
+        marginTop: 5,
+        flex: 1,
+        height: 40
     },
     iconseetext_nav: {
-    
-        textAlign:'center',
-       
+
+        textAlign: 'center',
+
 
     },
     call_nav: {
@@ -100,32 +100,32 @@ export const globalStyles = StyleSheet.create({
         borderColor: '#50596D',
         borderRadius: 5,
         borderWidth: 1.5,
-        flex:1,
-         height:40
+        flex: 1,
+        height: 40
 
     },
     callcontents_nav: {
-      
-      textAlign:'center',
-     
-      
+
+        textAlign: 'center',
+
+
     },
     location_nav: {
-        
-      
+
+
         borderColor: '#50596D',
         borderRadius: 5,
         borderWidth: 1.5,
         justifyContent: 'center',
-       
-        marginTop:5,
-        flex:1,
-        height:40
+
+        marginTop: 5,
+        flex: 1,
+        height: 40
 
 
     },
     locationcontents_nav: {
-        textAlign:'center',
+        textAlign: 'center',
     },
 
     buttom_nav: {
@@ -141,7 +141,7 @@ export const globalStyles = StyleSheet.create({
     //About Brand
     container_brand: {
         flex: 4,
-        flexDirection: 'row',    
+        flexDirection: 'row',
     },
     circle: {
         width: 100,
@@ -203,15 +203,15 @@ export const globalStyles = StyleSheet.create({
         fontFamily: 'gelion-bold',
     },
     logo_brand: {
-      marginHorizontal:3,
+        marginHorizontal: 3,
         width: 100,
         height: 100,
         borderRadius: 50,
         justifyContent: 'space-between'
     },
-   
+
     discretion_detail: {
-      
+
         flex: 1,
         marginVertical: 10,
     },
@@ -257,7 +257,7 @@ export const globalStyles = StyleSheet.create({
         marginTop: 15,
 
     },
- 
+
     //Feed Page
     container_feed: {
         flex: 1,
@@ -286,12 +286,12 @@ export const globalStyles = StyleSheet.create({
         height: 140,
         width: 110,
         borderRadius: 2,
-       
-        marginEnd:3,
+
+        marginEnd: 3,
         paddingTop: 4,
         borderWidth: 0.5,
         borderColor: '#50596D',
-        
+
     },
 
     image_story: {
@@ -316,28 +316,7 @@ export const globalStyles = StyleSheet.create({
         fontFamily: 'gelion-bold',
         height: 30,
     },
-    // image_story: {
 
-    //     height: 190,
-    //     width: 150,
-    //     borderRadius: 2,
-    //     marginVertical: 10,
-    //     marginHorizontal: 10,
-    //     borderColor: 'red',
-    //     borderWidth: 2,
-    //     padding: 2,
-    //     borderColor: '#50596D',
-    // },
-    // content_story: {
-    //     flex: 1,
-    //     flexDirection: 'row',
-    //     marginHorizontal: 10,
-    //     marginBottom: 10,
-    //     textAlign: 'center',
-    //     color: 'white',
-    //     fontSize: 14,
-    //     fontFamily: 'gelion-bold',
-    // },
 
     //Store Page
     container_store: {
@@ -368,7 +347,8 @@ export const globalStyles = StyleSheet.create({
         color: 'white',
         fontSize: 16,
         fontFamily: 'gelion-bold',
-    }, searchBox_store: {
+    },
+    searchBox_store: {
         height: 80,
         backgroundColor: '#252A37',
         justifyContent: 'center',
@@ -380,7 +360,7 @@ export const globalStyles = StyleSheet.create({
         borderWidth: 1.5, flexDirection: 'row', padding: 5, alignItems: 'center'
     },
     contentSearch_store: {
-        fontSize: 18,
+        fontSize: 12,
         marginLeft: 15,
         flex: 1, color: 'white'
     },
@@ -514,11 +494,11 @@ export const globalStyles = StyleSheet.create({
 
     },
     imageTitle: {
-        width:170,
+        width: 170,
         height: 170,
         flex: 1
     },
-  
+
     contents_title: {
         color: '#EFEFEF',
         marginHorizontal: 5,
@@ -526,8 +506,119 @@ export const globalStyles = StyleSheet.create({
         fontFamily: 'gelion-bold',
     },
 
+    h1: {
+        fontSize: 16,
+        color: 'white',
+        fontFamily: 'gelion-bold',
+        marginLeft: 10
+
+    },
+
+    h2: {
+        fontSize: 16,
+        color: '#575B65',
+        fontFamily: 'gelion-bold',
+    },
+    h3: {
+        fontSize: 16,
+        color: '#18E39C',
+        fontFamily: 'gelion-bold',
+        marginLeft: 5
+
+    },
+    h4: {
+        fontSize: 12,
+        color: 'white',
+        fontFamily: 'gelion-bold',
+        marginLeft: 9,
+
+
+    },
+    h5: {
+        fontFamily: 'gelion-regular',
+        fontSize: 14,
+        color: 'white',
+    },
+    h6: {
+        fontFamily: 'gelion-regular',
+        fontSize: 18,
+        color: 'white',
+    },
+    greenFont: {
+        fontFamily: 'Arialic', color: '#18E39C', fontSize: 50, marginHorizontal: 16
+    },
+    contents_box: {
+        alignSelf: 'stretch', textAlign: 'left', fontSize: 14, color: 'white', fontFamily: 'gelion-bold'
+    },
+    container_comming_item: {
+        flex: 5, flexDirection: 'row', padding: 4
+    },
+    container_box1_item: {
+        flex: 5,
+        flexDirection: 'row',
+        backgroundColor: '#303540',
+        height: 110,
+
+        justifyContent: 'space-between'
+    },
+    image_item: {
+        width: 110,
+        height: 110,
+    },
+    circle_item: {
+        width: 30,
+        height: 30,
+        borderRadius: 100 / 1,
+        marginLeft: 10
+
+    },
+    small_box_item: {
+        height: 50,
+        backgroundColor: '#18E39C',
+        height: 30, width: 30,
+        margin: 15,
+        borderRadius: 3,
+    },
+    content_box_item: {
+        textAlign: 'center', marginTop: 4, fontSize: 18, color: '#fff', fontFamily: 'gelion-bold',
+    },
+
+    // Profile
+
+    container_comments: {
+        flex: 1,
+        flexDirection: 'row',
+
+    },
+    circle_small_profile: {
+        width: 65,
+        height: 65,
+        borderRadius: 65 / 1,
+        alignSelf: 'center',
+        marginTop: 2.5,
+        borderColor: '#1C202A',
+
+    },
+    container_box_profile: {
+        flex: 1,
+        flexDirection: 'column',
+        marginHorizontal: 16,
+        marginRight: 16,
+        marginTop: 5
+    },
+    container_comments_profile: {
+        flex: 1,
+        flexDirection: 'row',
+
+    },
+    container_box_profile: {
+        flex: 1,
+        flexDirection: 'column',
+        marginHorizontal: 16,
+        marginRight: 16,
+        marginTop: 5
+    },
+
 
 })
 
-
- 
