@@ -75,6 +75,15 @@ class RegisterScreen extends Component {
                             autoCapitalize={'none'}
                             autoCorrect={false}
                             style={styles.input} placeholder="Phone">
+                           
+                        </TextInput>
+                        
+                        <TextInput
+                            onChangeText={(text) => this.setState({ email: text })}
+                            keyboardType={'email-address'}
+                            autoCapitalize={'none'}
+                            autoCorrect={false}
+                            style={styles.input} placeholder="Email">
                         </TextInput>
                         <TextInput
                             onChangeText={(text) => this.setState({ username: text })}
@@ -82,13 +91,6 @@ class RegisterScreen extends Component {
                             autoCapitalize={'none'}
                             autoCorrect={false}
                             style={styles.input} placeholder="User Name">
-                        </TextInput>
-                        <TextInput
-                            onChangeText={(text) => this.setState({ email: text })}
-                            keyboardType={'email-address'}
-                            autoCapitalize={'none'}
-                            autoCorrect={false}
-                            style={styles.input} placeholder="Email">
                         </TextInput>
                         <TextInput
                             onChangeText={(text) => this.setState({ password: text })}
