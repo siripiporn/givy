@@ -18,6 +18,7 @@ import {
 import { CheckBox } from 'react-native-elements'
 import LoginScreen from './LoginScreen'
 import { globalStyles } from '../styles/styleGlobal';
+import axios from 'axios';
 
 class RegisterScreen extends Component {
 
@@ -26,17 +27,51 @@ class RegisterScreen extends Component {
         this.state = {
             fullname: "",
             username: "",
-            password:  [],
-            repassword:  [],
-            phonenumber: [],
-            email:"",
-
+            password:  "",
+            repassword:  "",
+            phonenumber: "",
+            email:""
         }
     }
 
 
     async onRegisterPressed() {
-        try {
+
+        if (this.state.fullname == "" ||
+            this.state.phonenumber == "" ||
+            this.state.email    == "" ||
+            this.state.username == "" ||
+            this.state.password == "" ||
+            this.state.repassword == ""
+           ){
+            Alert.alert("Invalid Register!")
+            return
+        }
+
+        //Check Password!
+        if(this.state.password != this.state.repassword){
+            Alert.alert("Invalid Password not Math!")
+            return
+        }
+
+        const data = {
+            email: this.state.email,
+            tel: this.state.phonenumber,
+            fullname: this.state.fullname,
+            username: this.state.username,
+            password: this.state.password
+        };
+
+
+        //Connect POST/login
+        axios.post('http://192.168.0.30:9000/api/v1.0.0/register',data)
+        .then( async(responese) => {
+            let account = responese.data;
+            let accountId = account.data.insertId;
+            if(accountId == undefined){
+                console.error("Error New Account!");
+            }
+            try {
             const { username, password,repassword, fullname, phonenumber,email } = this.state
             await AsyncStorage.setItem('username', username)
             await AsyncStorage.setItem('password', password)
@@ -44,12 +79,19 @@ class RegisterScreen extends Component {
             await AsyncStorage.setItem('repassword', repassword)
             await AsyncStorage.setItem('phonenumber', phonenumber)
             await AsyncStorage.setItem('email', email)
+            await AsyncStorage.setItem('accountId', accountId)
+            } catch (error) {
 
-        } catch (error) {
+            }
+            this.props.navigation.navigate('LoginScreen')
+            console.log("New Account ID=", responese.data, accountId);
+        }).catch((error) => {
+            console.error(error);
+        });
 
-        }
+        
 
-        this.props.navigation.navigate('LoginScreen')
+        // this.props.navigation.navigate('LoginScreen')
     }
 
     render() {
