@@ -23,7 +23,7 @@ class LoginScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            email: "",
+            username: "",
             password: ""
         }
     }
@@ -34,7 +34,7 @@ class LoginScreen extends React.Component {
         let regUsername = await AsyncStorage.getItem('username')
         let regPassword = await AsyncStorage.getItem('password')
 
-        if (this.state.username == '' || this.state.password == '') {
+        if (this.state.username == "" || this.state.password == "") {
             Alert.alert("Invalid Account")
             return
         }
@@ -45,13 +45,13 @@ class LoginScreen extends React.Component {
         };
 
         //Connect POST/login
-        axios.post('http://192.168.0.30:9000/api/v1.0.0/login',data)
+        axios.post('http://192.168.0.42:9000/api/v1.0.0/login',data)
         .then( async(responese) => {
             let account = responese.data.data[0]; 
-            if(account.AccountId != 0){
+            if(account.personId != 0){
                 //Save Account Storage2
-                await AsyncStorage.setItem('AccountId', account.AccountId)
-                await AsyncStorage.setItem('AccountName', account.AccountName)
+                await AsyncStorage.setItem('AccountId', ""+account.personId)
+                await AsyncStorage.setItem('AccountName', ""+account.uname)
                 await AsyncStorage.setItem('Token', account.JWT)
 
                 this.props.navigation.navigate("HomeScreen")
@@ -87,7 +87,7 @@ class LoginScreen extends React.Component {
 
                     <TextInput
                         onChangeText={(text) => this.setState({ username: text })}
-                        keyboardType={'ascii-capable'}
+                        keyboardType={'email-address'}
                         autoCapitalize={'none'}
                         autoCorrect={false}
                         style={styles.input}
@@ -158,12 +158,12 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     input: {
-        height: 50,
+        height: 65,
         width: '100%',
         marginTop: 10,
         padding: 4,
         borderRadius: 5,
-        fontSize: 16,
+        fontSize: 18,
         borderWidth: 1,
         borderColor: '#48bbec33',
         color: 'white'
